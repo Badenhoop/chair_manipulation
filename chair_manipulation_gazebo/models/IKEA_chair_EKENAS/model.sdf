@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='IKEA_chair_EKENAS'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>5.2702600087295775</mass>
+        <inertia>
+          <ixx>0.6181515373969004</ixx>
+          <ixy>-0.04976773010357968</ixy>
+          <ixz>0.00023541960346470936</ixz>
+          <iyy>0.5603163880849851</iyy>
+          <iyz>0.00011157869111613761</iyz>
+          <izz>0.561825078736258</izz>
+        </inertia>
+        <pose frame=''>0.377463 0.423785 -0.430126 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_EKENAS/nojitter_png_52afab7f974e7bdbac1ffe34fecf39b2_obj0/52afab7f974e7bdbac1ffe34fecf39b2_obj0_object.obj</uri>
+            <scale>1.000000 1.000000 1.000000</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_EKENAS/nojitter_png_52afab7f974e7bdbac1ffe34fecf39b2_obj0/52afab7f974e7bdbac1ffe34fecf39b2_obj0_object.obj</uri>
+            <scale>1.000000 1.000000 1.000000</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

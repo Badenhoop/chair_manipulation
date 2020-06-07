@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='IKEA_chair_KAUSTBY'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>1.2776460994309233</mass>
+        <inertia>
+          <ixx>93096.27751205719</ixx>
+          <ixy>-17682.436466940762</ixy>
+          <ixz>0.02099297431856394</ixz>
+          <iyy>37257.39494480825</iyy>
+          <iyz>0.02524787972867489</iyz>
+          <izz>99496.04210361982</izz>
+        </inertia>
+        <pose frame=''>-0.224913 0.400112 -0.210000 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_KAUSTBY/nojitter_png_b4ffc09bede26354143802691fd0e33f_obj0/b4ffc09bede26354143802691fd0e33f_obj0_object.obj</uri>
+            <scale>0.010000 0.010000 0.010000</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_KAUSTBY/nojitter_png_b4ffc09bede26354143802691fd0e33f_obj0/b4ffc09bede26354143802691fd0e33f_obj0_object.obj</uri>
+            <scale>0.010000 0.010000 0.010000</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

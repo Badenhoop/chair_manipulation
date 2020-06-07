@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='IKEA_chair_PREBEN'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>1.3708381443165183</mass>
+        <inertia>
+          <ixx>83898448.22126992</ixx>
+          <ixy>-12572262.56337539</ixy>
+          <ixz>-225300.58987276367</ixz>
+          <iyy>45213983.76049798</iyy>
+          <iyz>-52988.98472552734</iyz>
+          <izz>87262942.58816898</izz>
+        </inertia>
+        <pose frame=''>0.240988 0.367387 -0.193858 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_PREBEN/nojitter_png_efe76021aa616a41f51fa0238791f5dc_obj0/efe76021aa616a41f51fa0238791f5dc_obj0_object.obj</uri>
+            <scale>0.001000 0.001000 0.001000</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_PREBEN/nojitter_png_efe76021aa616a41f51fa0238791f5dc_obj0/efe76021aa616a41f51fa0238791f5dc_obj0_object.obj</uri>
+            <scale>0.001000 0.001000 0.001000</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

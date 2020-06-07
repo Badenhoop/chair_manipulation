@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='IKEA_chair_JOKKMOKK'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>1.0861873576633339</mass>
+        <inertia>
+          <ixx>64726.26575019646</ixx>
+          <ixy>208.9283944708109</ixy>
+          <ixz>-61.15178904914856</ixz>
+          <iyy>28399.5284114151</iyy>
+          <iyz>-6751.398532604516</iyz>
+          <izz>62652.5812763176</izz>
+        </inertia>
+        <pose frame=''>-4.473360 -0.072025 -2.822079 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_JOKKMOKK/nojitter_png_da456ad332a1cba7e161098ea24215f1_obj0/da456ad332a1cba7e161098ea24215f1_obj0_object.obj</uri>
+            <scale>0.010000 0.010000 0.010000</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_JOKKMOKK/nojitter_png_da456ad332a1cba7e161098ea24215f1_obj0/da456ad332a1cba7e161098ea24215f1_obj0_object.obj</uri>
+            <scale>0.010000 0.010000 0.010000</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

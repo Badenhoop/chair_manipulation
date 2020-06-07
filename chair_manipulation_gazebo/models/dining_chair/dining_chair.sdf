@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="dining_chair">
+    <link name="link">
+      <inertial>
+        <pose>0.200000 0.116916 0.492814 0 0 0</pose>
+        <mass>8.684</mass>
+        <inertia>
+          <ixx>0.00087914574</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00084556877</iyy>
+          <iyz>0.00020777601</iyz>
+          <izz>-0.00048814758</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="colision1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://dining_chair/meshes/dining_chair.stl</uri>
+	          <scale> 1 1 1 </scale>
+          </mesh>
+        </geometry>
+        <surface>
+          <bounce />
+          <friction>
+            <ode />
+          </friction>
+          <contact>
+            <ode />
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual1">
+        <geometry>
+          <mesh>
+            <uri>model://dining_chair/meshes/dining_chair.stl</uri>
+	          <scale> 1 1 1 </scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Wood</name>
+          </script>
+        </material>
+      </visual>
+
+      <velocity_decay>
+        <linear>0.000000</linear>
+        <angular>0.000000</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>1</gravity>
+      
+    </link>
+  </model>
+</sdf>

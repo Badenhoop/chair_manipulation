@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='IKEA_chair_SNILLE'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>1.9156697467648158</mass>
+        <inertia>
+          <ixx>8062.079260706275</ixx>
+          <ixy>520.6097948623105</ixy>
+          <ixz>0.6785998039538879</ixz>
+          <iyy>5247.715725030747</iyy>
+          <iyz>-905.916503318597</iyz>
+          <izz>8054.662492707719</izz>
+        </inertia>
+        <pose frame=''>0.530094 0.325641 -0.581767 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_SNILLE/nojitter_png_SNILLE_chair_1_obj0/SNILLE_chair_1_obj0_object.obj</uri>
+            <scale>0.025400 0.025400 0.025400</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_SNILLE/nojitter_png_SNILLE_chair_1_obj0/SNILLE_chair_1_obj0_object.obj</uri>
+            <scale>0.025400 0.025400 0.025400</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='IKEA_chair_MARIUS'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>0.4138392033993359</mass>
+        <inertia>
+          <ixx>10227316.161387445</ixx>
+          <ixy>14557.25547128418</ixy>
+          <ixz>0.0160268603515625</ixz>
+          <iyy>6034157.846912539</iyy>
+          <iyz>4.025219548339844</iyz>
+          <izz>10227369.809019716</izz>
+        </inertia>
+        <pose frame=''>0.191039 0.241000 -0.190500 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_MARIUS/nojitter_png_3f5f2d97b8db06408b392aee16858077_obj0/3f5f2d97b8db06408b392aee16858077_obj0_object.obj</uri>
+            <scale>0.001000 0.001000 0.001000</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_MARIUS/nojitter_png_3f5f2d97b8db06408b392aee16858077_obj0/3f5f2d97b8db06408b392aee16858077_obj0_object.obj</uri>
+            <scale>0.001000 0.001000 0.001000</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='IKEA_chair_SKRUVSTA'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>2.3712202828724376</mass>
+        <inertia>
+          <ixx>172890970.82212764</ixx>
+          <ixy>-8936401.424871089</ixy>
+          <ixz>2294444.4957683496</ixz>
+          <iyy>127272180.03487147</iyy>
+          <iyz>12621735.63527875</iyz>
+          <izz>178446408.14398357</izz>
+        </inertia>
+        <pose frame=''>-0.055615 0.330007 0.398621 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_SKRUVSTA/nojitter_png_1b14d541eb544fc1181b7376abdd8e75_obj0/1b14d541eb544fc1181b7376abdd8e75_obj0_object.obj</uri>
+            <scale>0.001000 0.001000 0.001000</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_SKRUVSTA/nojitter_png_1b14d541eb544fc1181b7376abdd8e75_obj0/1b14d541eb544fc1181b7376abdd8e75_obj0_object.obj</uri>
+            <scale>0.001000 0.001000 0.001000</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

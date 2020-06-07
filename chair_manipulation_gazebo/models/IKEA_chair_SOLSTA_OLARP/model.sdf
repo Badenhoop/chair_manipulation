@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='IKEA_chair_SOLSTA_OLARP'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>2.13500389152629</mass>
+        <inertia>
+          <ixx>7531.384906920901</ixx>
+          <ixy>0.000873463115736097</ixy>
+          <ixz>-0.002442244867360592</ixz>
+          <iyy>7324.168468536225</iyy>
+          <iyz>-78.7545079516534</iyz>
+          <izz>8064.0585234771215</izz>
+        </inertia>
+        <pose frame=''>2.198069 0.323900 -0.888328 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_SOLSTA_OLARP/nojitter_png_a896bf2cfefba2140931de3404e051c_obj0/a896bf2cfefba2140931de3404e051c_obj0_object.obj</uri>
+            <scale>0.025400 0.025400 0.025400</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_SOLSTA_OLARP/nojitter_png_a896bf2cfefba2140931de3404e051c_obj0/a896bf2cfefba2140931de3404e051c_obj0_object.obj</uri>
+            <scale>0.025400 0.025400 0.025400</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

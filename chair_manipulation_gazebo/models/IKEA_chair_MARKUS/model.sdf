@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='IKEA_chair_MARKUS'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>2.8725500374002833</mass>
+        <inertia>
+          <ixx>316578373.0018463</ixx>
+          <ixy>-5285995.1193460785</ixy>
+          <ixz>-667523.393083753</ixz>
+          <iyy>138842658.79439667</iyy>
+          <iyz>37323225.03948594</iyz>
+          <izz>331352278.639924</izz>
+        </inertia>
+        <pose frame=''>-0.007281 0.481961 0.025630 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_MARKUS/nojitter_png_6aa1ac5d377261d1c2fbfa4bf3252b56_obj0/6aa1ac5d377261d1c2fbfa4bf3252b56_obj0_object.obj</uri>
+            <scale>0.001000 0.001000 0.001000</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_MARKUS/nojitter_png_6aa1ac5d377261d1c2fbfa4bf3252b56_obj0/6aa1ac5d377261d1c2fbfa4bf3252b56_obj0_object.obj</uri>
+            <scale>0.001000 0.001000 0.001000</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

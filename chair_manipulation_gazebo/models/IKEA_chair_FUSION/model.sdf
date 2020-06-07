@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='IKEA_chair_FUSION'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>0.8350323594039345</mass>
+        <inertia>
+          <ixx>2614.381594064976</ixx>
+          <ixy>103.02306454109696</ixy>
+          <ixz>113.77349566668076</ixz>
+          <iyy>1036.9141533328789</iyy>
+          <iyz>-155.38674371933675</iyz>
+          <izz>2607.356921066834</izz>
+        </inertia>
+        <pose frame=''>0.526684 0.367661 -0.264543 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_FUSION/nojitter_png_fusion_table_2_obj0/fusion_table_2_obj0_object.obj</uri>
+            <scale>0.025400 0.025400 0.025400</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_FUSION/nojitter_png_fusion_table_2_obj0/fusion_table_2_obj0_object.obj</uri>
+            <scale>0.025400 0.025400 0.025400</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

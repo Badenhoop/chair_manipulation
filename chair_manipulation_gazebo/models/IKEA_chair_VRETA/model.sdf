@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='IKEA_chair_VRETA'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>7.067576624189349</mass>
+        <inertia>
+          <ixx>59932.818857963524</ixx>
+          <ixy>8191.913814690764</ixy>
+          <ixz>-49.850829819405526</ixz>
+          <iyy>61044.85293623032</iyy>
+          <iyz>-21.753050059188443</iyz>
+          <izz>55503.626684211325</izz>
+        </inertia>
+        <pose frame=''>0.757446 0.439339 -0.665216 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_VRETA/nojitter_png_VRETA_chair_1_obj0/VRETA_chair_1_obj0_object.obj</uri>
+            <scale>0.025400 0.025400 0.025400</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_VRETA/nojitter_png_VRETA_chair_1_obj0/VRETA_chair_1_obj0_object.obj</uri>
+            <scale>0.025400 0.025400 0.025400</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

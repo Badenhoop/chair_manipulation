@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='IKEA_chair_PATRIK'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>2.0714927214681675</mass>
+        <inertia>
+          <ixx>148753235.43896717</ixx>
+          <ixy>15894522.81881323</ixy>
+          <ixz>-485675.5166926257</ixz>
+          <iyy>93561773.51728898</iyy>
+          <iyz>-418965.0702493286</iyz>
+          <izz>144557515.085223</izz>
+        </inertia>
+        <pose frame=''>0.049251 0.383534 -0.017219 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_PATRIK/nojitter_png_f495c500ef468ea781a172d69c52a28a_obj0/f495c500ef468ea781a172d69c52a28a_obj0_object.obj</uri>
+            <scale>0.001000 0.001000 0.001000</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_PATRIK/nojitter_png_f495c500ef468ea781a172d69c52a28a_obj0/f495c500ef468ea781a172d69c52a28a_obj0_object.obj</uri>
+            <scale>0.001000 0.001000 0.001000</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

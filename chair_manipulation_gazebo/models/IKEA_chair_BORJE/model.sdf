@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='IKEA_chair_BORJE'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>1.2701750200945325</mass>
+        <inertia>
+          <ixx>97055.25334822082</ixx>
+          <ixy>5.3782572947442535</ixy>
+          <ixz>1.7893252997398377</ixz>
+          <iyy>37123.89845614624</iyy>
+          <iyz>-15042.314491013527</iyz>
+          <izz>87002.98955933255</izz>
+        </inertia>
+        <pose frame=''>0.265414 0.391875 -6.069073 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_BORJE/nojitter_png_borje_chair_obj0/borje_chair_obj0_object.obj</uri>
+            <scale>0.010000 0.010000 0.010000</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_BORJE/nojitter_png_borje_chair_obj0/borje_chair_obj0_object.obj</uri>
+            <scale>0.010000 0.010000 0.010000</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

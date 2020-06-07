@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='IKEA_chair_VILMAR'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>1.4090888991242745</mass>
+        <inertia>
+          <ixx>85755857.67389438</ixx>
+          <ixy>313211.9502419336</ixy>
+          <ixz>24827.24866984375</ixz>
+          <iyy>50844022.19472437</iyy>
+          <iyz>14083912.913643027</iyz>
+          <izz>83373233.25537015</izz>
+        </inertia>
+        <pose frame=''>0.230778 0.327907 -0.232377 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_VILMAR/nojitter_png_c1c0b3d35cdef5e2f51fa0238791f5dc_obj0/c1c0b3d35cdef5e2f51fa0238791f5dc_obj0_object.obj</uri>
+            <scale>0.001000 0.001000 0.001000</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_VILMAR/nojitter_png_c1c0b3d35cdef5e2f51fa0238791f5dc_obj0/c1c0b3d35cdef5e2f51fa0238791f5dc_obj0_object.obj</uri>
+            <scale>0.001000 0.001000 0.001000</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

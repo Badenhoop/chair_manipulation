@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='IKEA_chair_JULES'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>2.26093031365506</mass>
+        <inertia>
+          <ixx>10833.23729243623</ixx>
+          <ixy>-53.600274828705395</ixy>
+          <ixz>11.482374366547798</ixz>
+          <iyy>6802.249210391376</iyy>
+          <iyz>-1402.2212062912256</iyz>
+          <izz>12116.740529784354</izz>
+        </inertia>
+        <pose frame=''>0.331369 0.379330 -0.302056 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_JULES/nojitter_png_b2bdcf3817372a394904d89e9169817b_obj0/b2bdcf3817372a394904d89e9169817b_obj0_object.obj</uri>
+            <scale>0.025400 0.025400 0.025400</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_JULES/nojitter_png_b2bdcf3817372a394904d89e9169817b_obj0/b2bdcf3817372a394904d89e9169817b_obj0_object.obj</uri>
+            <scale>0.025400 0.025400 0.025400</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

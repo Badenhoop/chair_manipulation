@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='IKEA_chair_KLAPPSTA'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>3.6037334846864755</mass>
+        <inertia>
+          <ixx>298787252.0636212</ixx>
+          <ixy>107898.76415249999</ixy>
+          <ixz>-7497.148322499999</ixz>
+          <iyy>309069737.858945</iyy>
+          <iyz>-5571481.259700937</iyz>
+          <izz>298666167.90485996</izz>
+        </inertia>
+        <pose frame=''>2.351288 0.353918 -1.453600 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_KLAPPSTA/nojitter_png_b1f85c18b3ccbe3a8bc6f322a9608b07_obj0/b1f85c18b3ccbe3a8bc6f322a9608b07_obj0_object.obj</uri>
+            <scale>0.001000 0.001000 0.001000</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_KLAPPSTA/nojitter_png_b1f85c18b3ccbe3a8bc6f322a9608b07_obj0/b1f85c18b3ccbe3a8bc6f322a9608b07_obj0_object.obj</uri>
+            <scale>0.001000 0.001000 0.001000</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

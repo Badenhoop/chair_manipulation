@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='IKEA_chair_POANG'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>1.2691913047180188</mass>
+        <inertia>
+          <ixx>3896.2477531219856</ixx>
+          <ixy>-142.83928392791188</ixy>
+          <ixz>-0.005963845412040501</ixz>
+          <iyy>4640.559799026018</iyy>
+          <iyz>-0.004160766697365976</iyz>
+          <izz>2514.725787981404</izz>
+        </inertia>
+        <pose frame=''>0.249718 0.182543 -0.343694 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_POANG/nojitter_png_1d558bed3e89f8e0e4edfe667419c289_obj0/1d558bed3e89f8e0e4edfe667419c289_obj0_object.obj</uri>
+            <scale>0.025400 0.025400 0.025400</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_POANG/nojitter_png_1d558bed3e89f8e0e4edfe667419c289_obj0/1d558bed3e89f8e0e4edfe667419c289_obj0_object.obj</uri>
+            <scale>0.025400 0.025400 0.025400</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

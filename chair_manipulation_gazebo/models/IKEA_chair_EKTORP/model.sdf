@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='IKEA_chair_EKTORP'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>6.69996780991953</mass>
+        <inertia>
+          <ixx>759052.0931993766</ixx>
+          <ixy>-690.8612255697251</ixy>
+          <ixz>258.8571697921753</ixz>
+          <iyy>975696.508300458</iyy>
+          <iyz>-54343.26309907246</iyz>
+          <izz>875503.1329380261</izz>
+        </inertia>
+        <pose frame=''>0.633241 0.379235 -0.593648 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_EKTORP/nojitter_png_Ektorp_armchair_toft_obj0/Ektorp_armchair_toft_obj0_object.obj</uri>
+            <scale>0.010000 0.010000 0.010000</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_EKTORP/nojitter_png_Ektorp_armchair_toft_obj0/Ektorp_armchair_toft_obj0_object.obj</uri>
+            <scale>0.010000 0.010000 0.010000</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

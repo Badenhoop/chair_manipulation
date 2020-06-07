@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='IKEA_chair_REIDAR'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>1.5369102576118363</mass>
+        <inertia>
+          <ixx>0.09288408846330601</ixx>
+          <ixy>-0.005707842072657371</ixy>
+          <ixz>0.002041012390950614</ixz>
+          <iyy>0.05537919870360619</iyy>
+          <iyz>0.003164734222051366</iyz>
+          <izz>0.09151839236615444</izz>
+        </inertia>
+        <pose frame=''>1.696818 0.357742 -0.396301 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_REIDAR/nojitter_png_5b806b9e115b5a783851911ab8e53bed_obj0/5b806b9e115b5a783851911ab8e53bed_obj0_object.obj</uri>
+            <scale>1.000000 1.000000 1.000000</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_REIDAR/nojitter_png_5b806b9e115b5a783851911ab8e53bed_obj0/5b806b9e115b5a783851911ab8e53bed_obj0_object.obj</uri>
+            <scale>1.000000 1.000000 1.000000</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

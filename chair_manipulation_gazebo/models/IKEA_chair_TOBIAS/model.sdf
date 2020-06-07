@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='IKEA_chair_TOBIAS'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>1.759747754340366</mass>
+        <inertia>
+          <ixx>109726.31703644892</ixx>
+          <ixy>-0.09022376570105553</ixy>
+          <ixz>3.6832071367800236</ixz>
+          <iyy>79750.64642295378</iyy>
+          <iyz>-12642.0367793234</iyz>
+          <izz>107837.64292514349</izz>
+        </inertia>
+        <pose frame=''>0.282514 0.315704 -0.298484 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_TOBIAS/nojitter_png_331bfb4cc56f09e201cbed672acdcde_obj0/331bfb4cc56f09e201cbed672acdcde_obj0_object.obj</uri>
+            <scale>0.010000 0.010000 0.010000</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_TOBIAS/nojitter_png_331bfb4cc56f09e201cbed672acdcde_obj0/331bfb4cc56f09e201cbed672acdcde_obj0_object.obj</uri>
+            <scale>0.010000 0.010000 0.010000</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

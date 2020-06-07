@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='IKEA_chair_IVAR'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>1.268693081679733</mass>
+        <inertia>
+          <ixx>0.08800231414960476</ixx>
+          <ixy>-3.846112625431608e-09</ixy>
+          <ixz>1.5711364848014497e-09</ixz>
+          <iyy>0.03802209950355856</iyy>
+          <iyz>-0.01456997523679236</iyz>
+          <izz>0.08404821484852117</izz>
+        </inertia>
+        <pose frame=''>0.207371 -0.042546 -0.258135 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_IVAR/nojitter_png_4ca29321dadaae90a516b539b31607a2_obj0/4ca29321dadaae90a516b539b31607a2_obj0_object.obj</uri>
+            <scale>1.000000 1.000000 1.000000</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ikea_models/meshes/IKEA_chair_IVAR/nojitter_png_4ca29321dadaae90a516b539b31607a2_obj0/4ca29321dadaae90a516b539b31607a2_obj0_object.obj</uri>
+            <scale>1.000000 1.000000 1.000000</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<launch>
+  <group ns="robot1">
+    <node name="move" pkg="chair_manipulation_gazebo" type="move.py" output="screen" />
+  </group>
+</launch>

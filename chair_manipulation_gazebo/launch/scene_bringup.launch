@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="paused" default="true" doc="Starts gazebo in paused mode" />
+  <arg name="gui" default="true" doc="Starts gazebo gui" />
+  
+  <!-- startup simulated world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find chair_manipulation_gazebo)/worlds/scene.world" />
+    <arg name="paused" value="false" />
+    <arg name="gui" value="$(arg gui)"/>
+  </include>
+
+  <group ns="robot1">
+    <include file="$(find ur10_robotiq_2f_140_gazebo)/launch/spawn.launch">
+      <arg name="limited" value="true" />
+      <arg name="robot_name" value="robot1" />
+      <arg name="tf_prefix" value="robot1" />
+      <arg name="x" value="-1.0" />
+      <arg name="y" value="0.0" />
+      <arg name="z" value="0.1" />
+      <arg name="roll" value="0.0" />
+      <arg name="pitch" value="0.0" />
+      <arg name="yaw" value="1.5707" />
+    </include>
+  </group>
+
+  <group ns="robot2">
+    <include file="$(find ur10_robotiq_2f_140_gazebo)/launch/spawn.launch">
+      <arg name="limited" value="true" />
+      <arg name="robot_name" value="robot2" />
+      <arg name="tf_prefix" value="robot2" />
+      <arg name="x" value="1.0" />
+      <arg name="y" value="0.0" />
+      <arg name="z" value="0.1" />
+      <arg name="roll" value="0.0" />
+      <arg name="pitch" value="0.0" />
+      <arg name="yaw" value="1.5707" />
+    </include>
+  </group>
+
+</launch>
