@@ -2,7 +2,7 @@
 <launch>
   <arg name="paused" default="true" doc="Starts gazebo in paused mode" />
   <arg name="gui" default="true" doc="Starts gazebo gui" />
-  
+
   <!-- startup simulated world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find chair_manipulation_gazebo)/worlds/scene.world" />
@@ -10,9 +10,10 @@
     <arg name="gui" value="$(arg gui)"/>
   </include>
 
+  <!-- first robot -->
   <group ns="robot1">
     <include file="$(find ur10_robotiq_2f_140_gazebo)/launch/spawn.launch">
-      <arg name="limited" value="true" />
+      <arg name="limited" value="false" />
       <arg name="robot_name" value="robot1" />
       <arg name="tf_prefix" value="robot1" />
       <arg name="x" value="-1.0" />
@@ -24,9 +25,10 @@
     </include>
   </group>
 
+  <!-- second robot -->
   <group ns="robot2">
     <include file="$(find ur10_robotiq_2f_140_gazebo)/launch/spawn.launch">
-      <arg name="limited" value="true" />
+      <arg name="limited" value="false" />
       <arg name="robot_name" value="robot2" />
       <arg name="tf_prefix" value="robot2" />
       <arg name="x" value="1.0" />
@@ -37,5 +39,22 @@
       <arg name="yaw" value="1.5707" />
     </include>
   </group>
+
+  <!-- camera -->
+  <include file="$(find chair_manipulation_gazebo)/launch/spawn_camera.launch">
+    <arg name="x" value="0.0" />
+    <arg name="y" value="2.0" />
+    <arg name="z" value="1.0" />
+    <arg name="roll" value="0.0" />
+    <arg name="pitch" value="0.17453" />
+    <arg name="yaw" value="-1.5707" />
+  </include>
+
+  <!-- global world tf -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_robot1_world" 
+      args="0 0 0 0 0 0 /world /robot1/world" />
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_robot2_world" 
+      args="0 0 0 0 0 0 /world /robot2/world" />
 
 </launch>

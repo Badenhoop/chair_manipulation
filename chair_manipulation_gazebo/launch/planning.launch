@@ -1,9 +1,13 @@
 <?xml version="1.0" ?>
 <launch>
   <group ns="robot1">
-    <include file="$(find ur10_robotiq_2f_140_moveit_config)/launch/ur10_robotiq_2f_140_moveit_planning_execution.launch" />
+    <include file="$(find ur10_robotiq_2f_140_moveit_config)/launch/ur10_robotiq_2f_140_moveit_planning_execution.launch">
+      <arg name="use_rviz" value="true" />
+    </include>
   </group>
   <group ns="robot2">
-    <include file="$(find ur10_robotiq_2f_140_moveit_config)/launch/ur10_robotiq_2f_140_moveit_planning_execution.launch" />
+    <include file="$(find ur10_robotiq_2f_140_moveit_config)/launch/ur10_robotiq_2f_140_moveit_planning_execution.launch">
+      <arg name="use_rviz" value="false" />
+    </include>
   </group>
 </launch>

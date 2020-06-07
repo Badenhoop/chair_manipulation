@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="camera_name" default="camera" doc="The name of the spawned model in gazebo. Must be unique across the world." />
+  <arg name="tf_prefix" default="" doc="The tf prefix used by the robot_state_publisher." />
+  <arg name="x" default="0.0" />
+  <arg name="y" default="0.0" />
+  <arg name="z" default="0.0" />
+  <arg name="roll" default="0.0" />
+  <arg name="pitch" default="0.0" />
+  <arg name="yaw" default="0.0" />
+
+  <!-- send camera urdf to param server -->
+  <param name="camera_description" command="$(find xacro)/xacro --inorder '$(find common_sensors)/urdf/sample_robots/kinect.urdf.xacro'" />
+
+  <!-- spawn camera -->
+  <node name="spawn_camera" pkg="gazebo_ros" type="spawn_model" 
+    args="-urdf -param camera_description -model $(arg camera_name) -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)" 
+    respawn="false" output="screen" />
+  
+  <!-- robot state publisher for tf -->
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <remap from="robot_description" to="camera_description" />
+    <param name="publish_frequency" type="double" value="50.0" />
+    <param name="tf_prefix" type="string" value="$(arg tf_prefix)" />
+  </node>
+
+</launch>
