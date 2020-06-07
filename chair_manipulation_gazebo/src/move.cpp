@@ -58,7 +58,7 @@ void pick(moveit::planning_interface::MoveGroupInterface &move_group)
     // BEGIN_SUB_TUTORIAL pick1
     // Create a vector of grasps to be attempted, currently only creating single grasp.
     // This is essentially useful when using a grasp generator to generate and test multiple grasps.
-    std::vector <moveit_msgs::Grasp> grasps;
+    std::vector<moveit_msgs::Grasp> grasps;
     grasps.resize(1);
 
     // Setting grasp pose
@@ -120,7 +120,7 @@ void place(moveit::planning_interface::MoveGroupInterface &group)
     // |br|
     // Ideally, you would create a vector of place locations to be attempted although in this example, we only create
     // a single place location.
-    std::vector <moveit_msgs::PlaceLocation> place_location;
+    std::vector<moveit_msgs::PlaceLocation> place_location;
     place_location.resize(1);
 
     // Setting place location pose
@@ -172,7 +172,7 @@ void addCollisionObjects(moveit::planning_interface::PlanningSceneInterface &pla
     // Creating Environment
     // ^^^^^^^^^^^^^^^^^^^^
     // Create vector to hold 3 collision objects.
-    std::vector <moveit_msgs::CollisionObject> collision_objects;
+    std::vector<moveit_msgs::CollisionObject> collision_objects;
     collision_objects.resize(3);
 
     // Add the first table where the cube will originally be kept.
@@ -200,8 +200,38 @@ void addCollisionObjects(moveit::planning_interface::PlanningSceneInterface &pla
     planning_scene_interface.applyCollisionObjects(collision_objects);
 }
 
-geometry_msgs::Pose setPose(moveit::planning_interface::MoveGroupInterface &group,
-             double x, double y, double z, double roll, double pitch, double yaw)
+void addGroundPlane(moveit::planning_interface::MoveGroupInterface &group,
+                    moveit::planning_interface::PlanningSceneInterface &planning_scene_interface)
+{
+    moveit_msgs::CollisionObject collision_object;
+    collision_object.header.frame_id = group.getPlanningFrame();
+    collision_object.id = "ground_plane";
+
+    shape_msgs::Plane plane;
+    plane.coef[0] = 0.0;
+    plane.coef[1] = 0.0;
+    plane.coef[2] = 1.0;
+    plane.coef[3] = 0.0;
+
+    geometry_msgs::Pose box_pose;
+    box_pose.orientation.w = 1.0;
+    box_pose.position.x = 0.0;
+    box_pose.position.y = 0.0;
+    box_pose.position.z = -0.1;
+
+    collision_object.planes.push_back(plane);
+    collision_object.plane_poses.push_back(box_pose);
+    collision_object.operation = collision_object.ADD;
+
+    std::vector<moveit_msgs::CollisionObject> collision_objects;
+    collision_objects.push_back(collision_object);
+
+    planning_scene_interface.addCollisionObjects(collision_objects);
+}
+
+void moveToPose(moveit::planning_interface::MoveGroupInterface &group,
+                moveit::planning_interface::PlanningSceneInterface &planning_scene_interface,
+                double x, double y, double z, double roll, double pitch, double yaw)
 {
     tf2::Quaternion orientation;
     orientation.setRPY(roll, pitch, yaw);
@@ -211,7 +241,13 @@ geometry_msgs::Pose setPose(moveit::planning_interface::MoveGroupInterface &grou
     target_pose.position.y = y;
     target_pose.position.z = z;
     group.setPoseTarget(target_pose);
-    return target_pose;
+
+    addGroundPlane(group, planning_scene_interface);
+
+    moveit::planning_interface::MoveGroupInterface::Plan plan;
+    bool success = (group.plan(plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
+    ROS_INFO_NAMED("move", "Visualizing plan %s", success ? "" : "FAILED");
+    group.move();
 }
 
 void moveUp(moveit::planning_interface::MoveGroupInterface &group)
@@ -237,6 +273,8 @@ int main(int argc, char **argv)
     const moveit::core::JointModelGroup *joint_model_group =
             move_group.getCurrentState()->getJointModelGroup(PLANNING_GROUP);
 
+    move_group.setPlanningTime(60.0);
+
     namespace rvt = rviz_visual_tools;
     moveit_visual_tools::MoveItVisualTools visual_tools("world");
 
@@ -249,56 +287,7 @@ int main(int argc, char **argv)
     visual_tools.trigger();
 
     // moveUp(move_group);
-
-    auto target_pose = setPose(move_group, 0.0, -0.5, 0.5, deg2rad(90), 0.0, 0.0);
-    // move_group.setNamedTarget("up");
-
-    moveit_msgs::CollisionObject collision_object;
-    collision_object.header.frame_id = move_group.getPlanningFrame();
-
-    // The id of the object is used to identify it.
-    collision_object.id = "box1";
-
-    // Define a box to add to the world.
-    shape_msgs::SolidPrimitive primitive;
-    primitive.type = primitive.BOX;
-    primitive.dimensions.resize(3);
-    primitive.dimensions[0] = 10;
-    primitive.dimensions[1] = 10;
-    primitive.dimensions[2] = 0.1;
-
-    // Define a pose for the box (specified relative to frame_id)
-    geometry_msgs::Pose box_pose;
-    box_pose.orientation.w = 1.0;
-    box_pose.position.x = 0.0;
-    box_pose.position.y = 0.0;
-    box_pose.position.z = -0.1;
-
-    collision_object.primitives.push_back(primitive);
-    collision_object.primitive_poses.push_back(box_pose);
-    collision_object.operation = collision_object.ADD;
-
-    std::vector<moveit_msgs::CollisionObject> collision_objects;
-    collision_objects.push_back(collision_object);
-
-    planning_scene_interface.addCollisionObjects(collision_objects);
-
-    move_group.setPlanningTime(60.0);
-
-    moveit::planning_interface::MoveGroupInterface::Plan plan;
-    bool success = (move_group.plan(plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-    ROS_INFO_NAMED("move", "Visualizing plan %s", success ? "" : "FAILED");
-    move_group.move();
-
-    // ros::WallDuration(1.0).sleep();
-    // moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
-    // moveit::planning_interface::MoveGroupInterface group("arm");
-    // group.setPlanningTime(45.0);
-
-    // addCollisionObjects(planning_scene_interface);
-
-    // // Wait a bit for ROS things to initialize
-    // ros::WallDuration(1.0).sleep();
+    moveToPose(move_group, planning_scene_interface, 0.0, -0.5, 0.5, deg2rad(90), 0.0, 0.0);
 
     ros::shutdown();
     return 0;
