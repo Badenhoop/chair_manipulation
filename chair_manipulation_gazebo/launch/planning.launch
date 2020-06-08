@@ -2,7 +2,7 @@
 <launch>
   <group ns="robot1">
     <include file="$(find ur10_robotiq_2f_140_moveit_config)/launch/ur10_robotiq_2f_140_moveit_planning_execution.launch">
-      <arg name="use_rviz" value="true" />
+      <arg name="use_rviz" value="false" />
     </include>
   </group>
   <group ns="robot2">

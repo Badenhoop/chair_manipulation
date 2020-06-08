@@ -1,6 +1,14 @@
 <?xml version="1.0" ?>
 <launch>
+  <arg name="command" default="move_up" />
   <group ns="robot1">
-    <node name="move" pkg="chair_manipulation_gazebo" type="move" output="screen" />
+    <node name="move" pkg="chair_manipulation_gazebo" type="move" output="screen">
+      <param name="command" type="string" value="$(arg command)" />
+    </node>
+  </group>
+  <group ns="robot2">
+    <node name="move" pkg="chair_manipulation_gazebo" type="move" output="screen">
+      <param name="command" type="string" value="$(arg command)" />
+    </node>
   </group>
 </launch>

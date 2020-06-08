@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot name="kinect" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:arg name="x" default="0.0"/>
+  <xacro:arg name="y" default="0.0"/>
+  <xacro:arg name="z" default="0.0"/>
+  <xacro:arg name="roll" default="0.0"/>
+  <xacro:arg name="pitch" default="0.0"/>
+  <xacro:arg name="yaw" default="0.0"/>
+
+  <xacro:include filename="$(find chair_manipulation_gazebo)/urdf/kinect/kinect.urdf.xacro" />
+
+  <link name="world"/>
+
+  <xacro:sensor_kinect parent="world" x="$(arg x)" y="$(arg y)" z="$(arg z)" roll="$(arg roll)" pitch="$(arg pitch)" yaw="$(arg yaw)" />
+
+</robot>

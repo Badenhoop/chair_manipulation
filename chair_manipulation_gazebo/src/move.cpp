@@ -259,6 +259,22 @@ void moveUp(moveit::planning_interface::MoveGroupInterface &group)
     group.move();
 }
 
+void open(moveit::planning_interface::MoveGroupInterface &group)
+{
+    group.setNamedTarget("open");
+    moveit::planning_interface::MoveGroupInterface::Plan plan;
+    group.plan(plan);
+    group.move();
+}
+
+void close(moveit::planning_interface::MoveGroupInterface &group)
+{
+    group.setNamedTarget("closed");
+    moveit::planning_interface::MoveGroupInterface::Plan plan;
+    group.plan(plan);
+    group.move();
+}
+
 int main(int argc, char **argv)
 {
     ros::init(argc, argv, "move");
@@ -266,14 +282,14 @@ int main(int argc, char **argv)
     ros::AsyncSpinner spinner(1);
     spinner.start();
 
-    static const std::string PLANNING_GROUP = "arm";
+    static const std::string ARM_GROUP = "arm";
+    static const std::string GRIPPER_GROUP = "gripper";
 
-    moveit::planning_interface::MoveGroupInterface move_group(PLANNING_GROUP);
+    moveit::planning_interface::MoveGroupInterface arm_group(ARM_GROUP);
+    moveit::planning_interface::MoveGroupInterface gripper_group(GRIPPER_GROUP);
     moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
-    const moveit::core::JointModelGroup *joint_model_group =
-            move_group.getCurrentState()->getJointModelGroup(PLANNING_GROUP);
 
-    move_group.setPlanningTime(60.0);
+    arm_group.setPlanningTime(60.0);
 
     namespace rvt = rviz_visual_tools;
     moveit_visual_tools::MoveItVisualTools visual_tools("world");
@@ -286,8 +302,23 @@ int main(int argc, char **argv)
     visual_tools.publishText(text_pose, "move", rvt::WHITE, rvt::XLARGE);
     visual_tools.trigger();
 
-    // moveUp(move_group);
-    moveToPose(move_group, planning_scene_interface, 0.0, -0.5, 0.5, deg2rad(90), 0.0, 0.0);
+    std::string command;
+    if (!ros::param::get("~command", command))
+    {
+        ROS_ERROR("Parameter 'command' not specified!");
+        return -1;
+    }
+
+    if (command == "move_up")
+        moveUp(arm_group);
+    else if (command == "move_to_pose")
+        moveToPose(arm_group, planning_scene_interface, 0.0, -0.5, 0.5, deg2rad(90), 0.0, 0.0);
+    else if (command == "close")
+        close(gripper_group);
+    else if (command == "open")
+        open(gripper_group);
+    else
+        ROS_WARN("Unknown command!");
 
     ros::shutdown();
     return 0;
