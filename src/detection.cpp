@@ -35,13 +35,11 @@ public:
     typedef pcl::PointCloud<pcl::FPFHSignature33> LocalFeatures;
     typedef pcl::search::KdTree<pcl::PointXYZ> SearchMethod;
 
-    FeatureCloud() :
+    explicit FeatureCloud(float normal_radius = 0.02f,
+                          float feature_radius = 0.02f) :
             search_method_xyz_(new SearchMethod),
-            normal_radius_(0.02f),
-            feature_radius_(0.02f)
-    {}
-
-    ~FeatureCloud()
+            normal_radius_(normal_radius),
+            feature_radius_(feature_radius)
     {}
 
     // Process the given cloud
@@ -142,21 +140,20 @@ public:
 //        PCL_MAKE_ALIGNED_OPERATOR_NEW
     };
 
-    TemplateAlignment(float min_sample_distance,
-                      float max_correspondence_distance,
-                      int nr_iterations)
+    explicit TemplateAlignment(int nr_samples = 10,
+                               float min_sample_distance = 0.05,
+                               float max_correspondence_distance = 0.0001,
+                               int nr_iterations = 500)
             : min_sample_distance_(min_sample_distance),
               max_correspondence_distance_(max_correspondence_distance),
               nr_iterations_(nr_iterations)
     {
         // Initialize the parameters in the Sample Consensus Initial Alignment (SAC-IA) algorithm
+        sac_ia_.setNumberOfSamples(nr_samples);
         sac_ia_.setMinSampleDistance(min_sample_distance_);
         sac_ia_.setMaxCorrespondenceDistance(max_correspondence_distance_);
         sac_ia_.setMaximumIterations(nr_iterations_);
     }
-
-    ~TemplateAlignment()
-    {}
 
     // Set the given cloud as the target to which the templates will be aligned
     void
@@ -281,6 +278,9 @@ int main(int argc, char *argv[])
     auto cluster_min_size = priv_nh_.param<int>("cluster_min_size", 100);
     auto cluster_max_size = std::numeric_limits<int>::max();
     auto template_model_path = priv_nh_.param<std::string>("template_model", "");
+    auto normal_radius = priv_nh_.param<float>("normal_radius", 0.02f);
+    auto feature_radius = priv_nh_.param<float>("feature_radius", 0.02f);
+    auto nr_samples = priv_nh_.param<int>("nr_samples", 10);
     auto min_sample_distance = priv_nh_.param<float>("min_sample_distance", 0.05f);
     auto max_correspondence_distance = priv_nh_.param<float>("max_corresponding_distance", 0.0001f);
     auto nr_iterations = priv_nh_.param<int>("nr_iterations", 100);
@@ -293,7 +293,7 @@ int main(int argc, char *argv[])
     pcl::PointCloud<pcl::PointXYZ>::Ptr transformed_template_cloud(new pcl::PointCloud<pcl::PointXYZ>);
     pcl::io::loadPCDFile(template_model_path, *template_cloud);
     translateToOrigin(*template_cloud, *transformed_template_cloud);
-    FeatureCloud template_feature_cloud;
+    FeatureCloud template_feature_cloud{normal_radius, feature_radius};
     template_feature_cloud.setInputCloud(transformed_template_cloud);
 
     /*
@@ -468,15 +468,15 @@ int main(int argc, char *argv[])
         /*
          * ALIGN WITH TEMPLATE
          */
-        FeatureCloud chair_feature_cloud;
+        FeatureCloud chair_feature_cloud{normal_radius, feature_radius};
         chair_feature_cloud.setInputCloud(chair_cloud);
 
-        TemplateAlignment align;
+        TemplateAlignment align{nr_samples, min_sample_distance, max_correspondence_distance, nr_iterations};
         align.addTemplateCloud(template_feature_cloud);
         align.setTargetCloud(chair_feature_cloud);
 
         TemplateAlignment::Result best_alignment;
-        int best_index = align.findBestAlignment(best_alignment);
+        align.findBestAlignment(best_alignment);
 
         Eigen::Matrix3f rotation = best_alignment.final_transformation.block<3, 3>(0, 0);
         Eigen::Vector3f translation = best_alignment.final_transformation.block<3, 1>(0, 3);

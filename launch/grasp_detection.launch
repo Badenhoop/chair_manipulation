@@ -10,9 +10,12 @@
       plane_distance_threshold: 0.03
       cluster_tolerance: 0.1
       cluster_min_size: 250
+      normal_radius: 0.05
+      feature_radius: 0.05
+      nr_samples: 100
       min_sample_distance: 0.05
       max_correspondence_distance: 0.0001
-      nr_iterations: 500
+      nr_iterations: 100
     </rosparam>
   </node>
 </launch>
