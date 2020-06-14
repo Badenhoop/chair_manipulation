@@ -1,8 +1,0 @@
-prefix=/usr/local
-
-Name: chair_grasp_detection
-Description: Description of chair_grasp_detection
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

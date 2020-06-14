@@ -111,14 +111,14 @@ include_directories(
 # )
 
 ## Declare a cpp executable
-add_executable(detection_node src/detection.cpp)
+add_executable(registration_detection_node src/registration_detection.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(lesson_perception_node lesson_perception_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(detection_node ${catkin_LIBRARIES} ${PCL_LIBRARIES})
+target_link_libraries(registration_detection_node ${catkin_LIBRARIES} ${PCL_LIBRARIES})
 
 #############
 ## Install ##
