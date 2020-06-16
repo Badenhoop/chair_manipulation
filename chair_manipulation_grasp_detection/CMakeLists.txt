@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(chair_grasp_detection)
+project(chair_manipulation_grasp_detection)
 
 set(CMAKE_CXX_STANDARD 14)
 

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>chair_grasp_detection</name>
+  <name>chair_manipulation_grasp_detection</name>
   <version>0.0.0</version>
   <description>A package to detect grasps for chairs</description>
 
