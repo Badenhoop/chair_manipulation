@@ -3,7 +3,7 @@
   <xacro:include filename="$(find chair_manipulation_gazebo)/urdf/kinect/kinect_gazebo.urdf.xacro" />
 
   <!-- camera_name has to be unique! -->
-  <xacro:kinect_sensor link_name="camera_depth_frame" camera_name="camera1"
+  <xacro:kinect_sensor link_name="camera_depth_frame" camera_name="kinect"
                        frame_name="camera_depth_optical_frame"/>
 
 	<xacro:macro name="sensor_kinect" params="parent x y z roll pitch yaw">

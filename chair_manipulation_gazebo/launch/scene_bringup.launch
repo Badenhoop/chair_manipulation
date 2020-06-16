@@ -42,12 +42,28 @@
 
   <!-- camera -->
   <include file="$(find chair_manipulation_gazebo)/launch/spawn_camera.launch">
-    <arg name="x" value="0.0" />
-    <arg name="y" value="2.0" />
+    <!-- front view -->
+    <!-- <arg name="x" value="0" />
+    <arg name="y" value="2" />
     <arg name="z" value="1.0" />
-    <arg name="roll" value="0.0" />
+    <arg name="roll" value="0" />
     <arg name="pitch" value="0.17453" />
-    <arg name="yaw" value="-1.5707" />
+    <arg name="yaw" value="-1.57079" /> -->
+
+    <!-- 45 degree angle view -->
+    <!-- <arg name="x" value="1.41421" />
+    <arg name="y" value="1.41421" />
+    <arg name="z" value="1.0" />
+    <arg name="roll" value="0" />
+    <arg name="pitch" value="0.17453" />
+    <arg name="yaw" value="-2.35619" /> -->
+
+    <arg name="x" value="1" />
+    <arg name="y" value="0" />
+    <arg name="z" value="0.5" />
+    <arg name="roll" value="0" />
+    <arg name="pitch" value="0" />
+    <arg name="yaw" value="-3.14159" />
   </include>
 
   <!-- global world tf -->

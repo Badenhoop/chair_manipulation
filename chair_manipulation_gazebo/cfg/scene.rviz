@@ -7,10 +7,8 @@ Panels:
         - /Global Options1
         - /Status1
         - /MotionPlanning1/Planned Path1
-        - /PointCloud21
-        - /MarkerArray1
-      Splitter Ratio: 0.5
-    Tree Height: 549
+      Splitter Ratio: 0.5022761821746826
+    Tree Height: 521
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -57,7 +55,7 @@ Visualization Manager:
       Value: true
     - Acceleration_Scaling_Factor: 0.1
       Class: moveit_rviz_plugin/MotionPlanning
-      Enabled: false
+      Enabled: true
       Move Group Namespace: robot1
       MoveIt_Allow_Approximate_IK: false
       MoveIt_Allow_External_Program: false
@@ -218,7 +216,7 @@ Visualization Manager:
         Goal State Color: 250; 128; 0
         Interactive Marker Size: 0
         Joint Violation Color: 255; 0; 255
-        Planning Group: arm
+        Planning Group: ""
         Query Goal State: true
         Query Start State: false
         Show Workspace: false
@@ -351,7 +349,7 @@ Visualization Manager:
         Robot Alpha: 1
         Show Robot Collision: false
         Show Robot Visual: true
-      Value: false
+      Value: true
       Velocity_Scaling_Factor: 0.1
     - Class: rviz/TF
       Enabled: false
@@ -613,11 +611,19 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /rviz_visual_tools
+      Name: MarkerArray
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 1.4774231910705566
-        Min Value: 2.6226043701171875e-6
+        Max Value: 0.9568195343017578
+        Min Value: 2.980232238769531e-7
         Value: true
       Axis: Z
       Channel Name: intensity
@@ -637,19 +643,101 @@ Visualization Manager:
       Selectable: true
       Size (Pixels): 3
       Size (m): 0.009999999776482582
-      Style: Flat Squares
-      Topic: /camera1/depth/points
+      Style: Points
+      Topic: /kinect/depth/points
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
-    - Class: rviz/MarkerArray
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 0.9853925108909607
+        Min Value: 0.01492735743522644
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
       Enabled: true
-      Marker Topic: /rviz_visual_tools
-      Name: MarkerArray
-      Namespaces:
-        {}
-      Queue Size: 100
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: PointCloud2
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.009999999776482582
+      Style: Points
+      Topic: /chair
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 0.9853925108909607
+        Min Value: 0.01492735743522644
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 115; 210; 22
+      Color Transformer: FlatColor
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: PointCloud2
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.009999999776482582
+      Style: Points
+      Topic: /template
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 0.9853925108909607
+        Min Value: 0.01492735743522644
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 239; 41; 41
+      Color Transformer: FlatColor
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: PointCloud2
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.009999999776482582
+      Style: Points
+      Topic: /aligned_template
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
       Value: true
   Enabled: true
   Global Options:
@@ -679,37 +767,37 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.7839603424072266
+      Distance: 2.4493045806884766
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.31634896993637085
-        Y: -0.012410914525389671
-        Z: 0.707636833190918
+        X: -0.3391636610031128
+        Y: 0.25449448823928833
+        Z: 0.10975013673305511
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.3197973966598511
+      Pitch: 0.30479755997657776
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.9853981733322144
+      Yaw: 0.24044069647789001
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 846
+  Height: 1403
   Hide Left Dock: false
   Hide Right Dock: false
   MotionPlanning:
     collapsed: false
-  MotionPlanning - Slider:
+  MotionPlanning - Trajectory Slider:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd000000040000000000000295000002b0fc020000000afb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d000002b0000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb000000280020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000001600000016fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e00670000000374000001a60000019b00ffffff000000010000010f000002b0fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003d000002b0000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004b00000003efc0100000002fb0000000800540069006d00650100000000000004b0000002eb00fffffffb0000000800540069006d0065010000000000000450000000000000000000000100000002b000000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd000000040000000000000295000004ddfc020000000bfb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afc0000003d00000294000000c900fffffffa000000010100000002fb0000000c00430061006d0065007200610100000000ffffffff0000000000000000fb000000100044006900730070006c0061007900730100000000000002950000015600fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb000000280020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000000000000000fb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e006701000002d7000002430000019b00fffffffb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000004100ffffff00000001000004a6000004ddfc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fc0000003d000004dd000000a400fffffffa000000010100000002fb0000000c00430061006d0065007200610100000000ffffffff0000000000000000fb0000000a00560069006500770073010000059c0000010f0000010000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e1000001970000000300000d2d0000003efc0100000002fb0000000800540069006d0065010000000000000d2d000002eb00fffffffb0000000800540069006d00650100000000000004500000000000000000000005e6000004dd00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -718,6 +806,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: false
-  Width: 1200
-  X: 1347
-  Y: 107
+  Width: 3373
+  X: 67
+  Y: 0
