@@ -11,11 +11,18 @@
   <buildtool_depend>catkin</buildtool_depend>
   <depend>roscpp</depend>
   <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
   <depend>tf</depend>
   <depend>pcl_conversions</depend>
   <depend>pcl_msgs</depend>
   <depend>pcl_ros</depend>
   <depend>visualization_msgs</depend>
   <depend>tf_conversions</depend>
+  <depend>image_transport</depend>
+  <depend>cv_bridge</depend>
+
+  <!-- In case we want to create a custom grasp message -->
+<!--  <depend>message_generation</depend>-->
+<!--  <exec_depend>message_runtime</exec_depend>-->
 
 </package>

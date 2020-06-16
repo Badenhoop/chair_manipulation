@@ -1,7 +1,7 @@
 #include <ros/ros.h>
-#include <tf/transform_datatypes.h>
-#include <tf/transform_listener.h>
-#include <tf/transform_broadcaster.h>
+#include <tf2_ros/transform_listener.h>
+#include <tf2/LinearMath/Quaternion.h>
+#include <tf2_ros/transform_broadcaster.h>
 #include <sensor_msgs/PointCloud2.h>
 #include <Eigen/Core>
 
@@ -290,11 +290,11 @@ int main(int argc, char *argv[])
     ros::init(argc, argv, "perception_node");
     ros::NodeHandle nh;
     ros::NodeHandle priv_nh_("~");
+    tf2_ros::TransformBroadcaster transform_broadcaster;
 
     /*
      * SET UP PARAMETERS (COULD BE INPUT FROM LAUNCH FILE/TERMINAL)
      */
-    auto camera_frame = priv_nh_.param<std::string>("camera_frame", "camera_depth_optical_frame");
     auto world_frame = priv_nh_.param<std::string>("world_frame", "world");
     auto cloud_topic = priv_nh_.param<std::string>("cloud_topic", "kinect/depth/points");
     auto voxel_leaf_size = priv_nh_.param<float>("voxel_leaf_size", 0.002);
@@ -360,6 +360,7 @@ int main(int argc, char *argv[])
         ROS_INFO_STREAM("Cloud service called; waiting for a PointCloud2 on topic " << topic);
         sensor_msgs::PointCloud2::ConstPtr recent_cloud =
                 ros::topic::waitForMessage<sensor_msgs::PointCloud2>(topic, nh);
+        auto camera_frame = recent_cloud->header.frame_id;
 
         /*
          * TRANSFORM POINTCLOUD FROM CAMERA FRAME TO WORLD FRAME
@@ -368,8 +369,8 @@ int main(int argc, char *argv[])
         tf::StampedTransform stransform;
         try
         {
-            listener.waitForTransform(world_frame, recent_cloud->header.frame_id, ros::Time::now(), ros::Duration(6.0));
-            listener.lookupTransform(world_frame, recent_cloud->header.frame_id, ros::Time(0), stransform);
+            listener.waitForTransform(world_frame, camera_frame, ros::Time::now(), ros::Duration(6.0));
+            listener.lookupTransform(world_frame, camera_frame, ros::Time(0), stransform);
         }
         catch (const tf::TransformException &ex)
         {
@@ -484,16 +485,20 @@ int main(int argc, char *argv[])
         /*
          * BROADCAST TRANSFORM
          */
-        static tf::TransformBroadcaster br;
-        tf::Transform part_transform;
-
-        // Here in the tf::Vector3(x,y,z) x,y, and z should be calculated based on the pointcloud filtering results
-        part_transform.setOrigin(
-                tf::Vector3(chair_cloud->at(1).x, chair_cloud->at(1).y, chair_cloud->at(1).z));
-        tf::Quaternion q;
+        geometry_msgs::TransformStamped chair_transform;
+        chair_transform.header.stamp = ros::Time::now();
+        chair_transform.header.frame_id = camera_frame;
+        chair_transform.child_frame_id = "chair";
+        chair_transform.transform.translation.x = chair_cloud->at(1).x;
+        chair_transform.transform.translation.y = chair_cloud->at(1).y;
+        chair_transform.transform.translation.z = chair_cloud->at(1).z;
+        tf2::Quaternion q;
         q.setRPY(0, 0, 0);
-        part_transform.setRotation(q);
-        br.sendTransform(tf::StampedTransform(part_transform, ros::Time::now(), world_frame, "chair"));
+        chair_transform.transform.rotation.x = q.x();
+        chair_transform.transform.rotation.y = q.y();
+        chair_transform.transform.rotation.z = q.z();
+        chair_transform.transform.rotation.w = q.w();
+        transform_broadcaster.sendTransform(chair_transform);
 
         /*
          * CENTER POINT CLOUDS
