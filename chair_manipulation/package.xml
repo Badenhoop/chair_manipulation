@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>chair_manipulation</name>
+  <version>0.0.0</version>
+  <description>Meta package that contains all essential package of chair_manipulation</description>
+
+  <maintainer email="philipp.badenhoop@hellocodeblog.com">Philipp Badenhoop</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <exec_depend>chair_manipulation_gazebo</exec_depend>
+  <exec_depend>chair_manipulation_grasp_detection</exec_depend>
+  <exec_depend>chair_manipulation_grasp_planning</exec_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+
+</package>

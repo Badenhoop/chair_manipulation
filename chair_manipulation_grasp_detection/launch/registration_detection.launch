@@ -1,5 +1,5 @@
 <launch>
-  <node name="grasp_detection" pkg="chair_grasp_detection" type="registration_detection_node" output="screen">
+  <node name="grasp_detection" pkg="chair_manipulation_grasp_detection" type="registration_detection_node" output="screen">
     <param name="template_model" value="$(find chair_manipulation_gazebo)/models/dining_chair/meshes/dining_chair.pcd" />
     <rosparam file="$(find chair_grasp_detection)/cfg/registration_detection.yaml" />
   </node>

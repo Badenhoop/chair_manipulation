@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>chair_manipulation_grasp_planning</name>
+  <version>0.0.0</version>
+  <description>A package to plan grasps of chairs</description>
+
+  <maintainer email="philipp.badenhoop@hellocodeblog.com">Philipp Badenhoop</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>pluginlib</depend>
+  <depend>eigen</depend>
+  <depend>moveit_core</depend>
+  <depend>moveit_ros_planning</depend>
+  <depend>moveit_ros_planning_interface</depend>
+  <depend>moveit_ros_perception</depend>
+  <depend>interactive_markers</depend>
+  <depend>geometric_shapes</depend>
+  <depend>moveit_visual_tools</depend>
+  <depend>rviz_visual_tools</depend>
+  <depend>pcl_ros</depend>
+  <depend>pcl_conversions</depend>
+  <depend>rosbag</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_eigen</depend>
+  <depend>tf2_geometry_msgs</depend>
+
+</package>
