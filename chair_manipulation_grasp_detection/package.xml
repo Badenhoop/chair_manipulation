@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>chair_manipulation_grasp_detection</name>
+  <version>0.0.0</version>
+  <description>A package to detect grasps for chairs</description>
+
+  <maintainer email="philipp.badenhoop@hellocodeblog.com">Philipp Badenhoop</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>tf</depend>
+  <depend>pcl_conversions</depend>
+  <depend>pcl_msgs</depend>
+  <depend>pcl_ros</depend>
+  <depend>visualization_msgs</depend>
+  <depend>tf_conversions</depend>
+  <depend>image_transport</depend>
+  <depend>cv_bridge</depend>
+
+  <!-- In case we want to create a custom grasp message -->
+<!--  <depend>message_generation</depend>-->
+<!--  <exec_depend>message_runtime</exec_depend>-->
+
+</package>
