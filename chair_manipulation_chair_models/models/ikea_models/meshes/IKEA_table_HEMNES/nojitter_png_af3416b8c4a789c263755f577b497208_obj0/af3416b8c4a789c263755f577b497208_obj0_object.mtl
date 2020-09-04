@@ -1,0 +1,10 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl Wood_Cherry_Original
+Ka 0.000000 0.000000 0.000000
+Kd 0.498039 0.443137 0.368627
+Ks 0.330000 0.330000 0.330000
+map_Kd af3416b8c4a789c263755f577b497208_obj0_object/Wood_Cherry_Original.jpg
+

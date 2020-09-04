@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+<launch>
+
+  <arg name="paused" default="true" doc="Starts gazebo in paused mode" />
+  <arg name="gui" default="true" doc="Starts gazebo gui" />
+  <arg name="world_id" default="5" doc="ID of the world" />
+
+  <!-- startup simulated world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find chair_manipulation_gazebo)/worlds/$(arg world_id).world" />
+    <arg name="paused" value="$(arg paused)" />
+    <arg name="gui" value="$(arg gui)"/>
+  </include>
+
+  <!-- spawn dual arm manipulator -->
+  <include file="$(find dual_arm_manipulator_gazebo)/launch/spawn.launch">
+    <arg name="robot_name" value="dual_arm_manipulator" />
+    <arg name="limited" value="true" />
+
+    <!-- position, orientation and initial joint values of first robot -->
+    <arg name="robot1_x" value="0.7" />
+    <arg name="robot1_y" value="0.7" />
+    <arg name="robot1_z" value="0.01" />
+    <arg name="robot1_roll" value="0.0" />
+    <arg name="robot1_pitch" value="0.0" />
+    <arg name="robot1_yaw" value="2.35619" />
+    <arg name="robot1_shoulder_pan_joint" value="0.0" />
+    <arg name="robot1_shoulder_lift_joint" value="-1.5707" />
+    <arg name="robot1_elbow_joint" value="0.0" />
+    <arg name="robot1_wrist_1_joint" value="-1.5707" />
+    <arg name="robot1_wrist_2_joint" value="0.0" />
+    <arg name="robot1_wrist_3_joint" value="0.0" />
+    <arg name="robot1_left_finger_joint" value="0.0" />
+    <arg name="robot1_right_finger_joint" value="0.0" />
+
+    <!-- position, orientation and initial joint values of second robot -->
+    <arg name="robot2_x" value="-0.7" />
+    <arg name="robot2_y" value="-0.7" />
+    <arg name="robot2_z" value="0.01" />
+    <arg name="robot2_roll" value="0.0" />
+    <arg name="robot2_pitch" value="0.0" />
+    <arg name="robot2_yaw" value="-0.78539" />
+    <arg name="robot2_shoulder_pan_joint" value="0.0" />
+    <arg name="robot2_shoulder_lift_joint" value="-1.5707" />
+    <arg name="robot2_elbow_joint" value="0.0" />
+    <arg name="robot2_wrist_1_joint" value="-1.5707" />
+    <arg name="robot2_wrist_2_joint" value="0.0" />
+    <arg name="robot2_wrist_3_joint" value="0.0" />
+    <arg name="robot2_left_finger_joint" value="0.0" />
+    <arg name="robot2_right_finger_joint" value="0.0" />
+  </include>
+
+  <!-- first camera -->
+  <include ns="camera1" file="$(find chair_manipulation_gazebo)/launch/spawn_camera.launch">
+    <arg name="camera_name" value="camera1" />
+    <arg name="tf_prefix" value="camera1" />
+    <arg name="x" value="1.0" />
+    <arg name="y" value="-1.0" />
+    <arg name="z" value="1.0" />
+    <arg name="roll" value="0.0" />
+    <arg name="pitch" value="0.34906" />
+    <arg name="yaw" value="2.35619" />
+  </include>
+
+  <!-- second camera -->
+  <include ns="camera2" file="$(find chair_manipulation_gazebo)/launch/spawn_camera.launch">
+    <arg name="camera_name" value="camera2" />
+    <arg name="tf_prefix" value="camera2" />
+    <arg name="x" value="-1.0" />
+    <arg name="y" value="1.0" />
+    <arg name="z" value="1.0" />
+    <arg name="roll" value="0.0" />
+    <arg name="pitch" value="0.34906" />
+    <arg name="yaw" value="-0.78539" />
+  </include>
+
+  <!-- camera1/world -> world -->
+  <node name="camera1_world_to_world" pkg="tf2_ros" type="static_transform_publisher"
+        args="0 0 0 0 0 0 /world /camera1/world" />
+
+  <!-- camera2/world -> world -->
+  <node name="camera2_world_to_world" pkg="tf2_ros" type="static_transform_publisher"
+        args="0 0 0 0 0 0 /world /camera2/world" />
+
+</launch>

@@ -1,0 +1,2 @@
+kivik_sofa_1_obj0_object
+kivik_sofa_2_obj0_object

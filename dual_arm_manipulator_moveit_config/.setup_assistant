@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: dual_arm_manipulator_description
+    relative_path: urdf/dual_arm_manipulator_robot.urdf.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/dual_arm_manipulator.srdf
+  CONFIG:
+    author_name: Philipp Badenhoop
+    author_email: philipp.badenhoop@hellocodeblog.com
+    generated_timestamp: 1598821678

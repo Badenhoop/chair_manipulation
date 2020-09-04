@@ -1,0 +1,175 @@
+grasp_database_filename: $(find chair_manipulation_grasp_detection_advanced)/cfg/grasp_database.yaml
+segmented_cloud_topic: cloud_segmented
+registered_cloud_topic: cloud_registered
+reconstructed_mesh_topic: reconstructed_mesh
+
+grasp_database_creator:
+  num_sample_trials_per_model: 2000
+  min_num_grasps_per_model: 10
+  max_num_grasps_per_model: 50
+  models:
+    - mesh: $(find chair_manipulation_chair_models)/models/dining_chair/meshes/dining_chair.ply
+      point_cloud: $(find chair_manipulation_chair_models)/models/dining_chair/point_clouds/dining_chair.pcd
+
+grasp_detection:
+  run_once: true
+  num_sample_trials_per_grasp: 5
+  sample_radius: 0.05
+  grasp_frames:
+    - robot1_grasp
+    - robot2_grasp
+
+gripper:
+  base_frame: robotiq_arg2f_base_link
+  tcp_frame: tcp
+  contact_threshold: 0.001
+  # This defines the open and closed configurations for independent fingers.
+  # The group names and states are defined in the .srdf file.
+  finger_groups:
+    - group_name: left_finger
+      open_group_state: left_finger_open
+      closed_group_state: left_finger_closed
+    - group_name: right_finger
+      open_group_state: right_finger_open
+      closed_group_state: right_finger_closed
+  touch_links:
+    - left_inner_finger_pad
+    - right_inner_finger_pad
+
+robot:
+  world_frame: world
+  arms:
+    - base_frame: robot1_base
+      ik_frame: robot1_wrist_3_link
+      tcp_frame: robot1_tcp
+      grasp_frame: robot1_grasp
+      group_name: robot1_arm
+    - base_frame: robot2_base
+      ik_frame: robot2_wrist_3_link
+      tcp_frame: robot2_tcp
+      grasp_frame: robot2_grasp
+      group_name: robot2_arm
+
+grasp_sampler:
+  max_antipodal_normal_angle: 0.08726 # 5 degrees
+  max_antipodal_position_angle: 0.08726 # 5 degrees
+  max_palm_normal_angle: 0.08726 # 5 degrees
+  gripper_pad_distance: 0.136
+  gripper_pad_length: 0.04 # true gripper pad length is 0.06 but a little less is better for avoiding collisions
+
+grasp_synthesizer:
+  num_arms: 2
+  friction_coefficient: 0.8
+  num_fiction_edges: 8
+  max_arm_radius: 1.5
+  max_yaw_angle: 1.5707
+  min_height: 0.2
+  nms_distance_threshold: 0.2
+  nms_orientation_threshold: 0.34906 # 20 degrees
+  world_frame: world
+  arm_base_frames:
+    - robot1_base_link
+    - robot2_base_link
+
+weights_offline:
+  epsilon1: 0.0
+  v1: 1.0
+  grasp_distance: 0.5
+  nearest_arm_distance: 0.0
+  nearest_arm_orientation: 0.0
+
+weights_online:
+  epsilon1: 0.0
+  v1: 1.0
+  grasp_distance: 0.5
+  nearest_arm_distance: 1.0
+  nearest_arm_orientation: 1.0
+
+ik_checker:
+  timeout: 0.1
+
+point_cloud_receiver:
+  topics:
+    - /camera1/kinect/depth/points
+    - /camera2/kinect/depth/points
+  world_frame: world
+
+point_cloud_preprocessor:
+  # Leaf size of the voxel filter.
+  # If this is set to 0.01 for example, it means that only one point is kept every 1x1x1cm voxel.
+  voxel_leaf_size: 0.02
+  # Number of neighbors to consider for the statistical outlier filter.
+  mean_k: 50
+  # Points with a distance larger than the standard deviation of the mean distance multiplied
+  # by the following value will be considered outliers.
+  stddev_mul_threshold: 3.0
+  # The search radius for normal estimation.
+  normal_search_radius: 0.05
+
+point_cloud_segmentation:
+  # Number of iterations of the plane extraction algorithm.
+  plane_max_iterations: 100
+  # The maximum allowed distance to the plane model.
+  plane_distance_threshold: 0.03
+  # The cluster tolerance. Small values may cause objects to be divided
+  #	in several clusters, whereas big values may join objects in a same cluster.
+  cluster_tolerance: 0.2
+  # Set the minimum and maximum number of points that a cluster can have.
+  min_cluster_size: 250
+  max_cluster_size: 1000000000
+
+point_cloud_registration:
+  # Regularization parameter of the non-rigid coherent point drift algorithm.
+  lambda: 3.0
+  # Smoothness parameter of the non-rigid coherent point drift algorithm.
+  beta: 3.0
+  # Number of iteration of the coherent point drift algorithm.
+  max_iterations: 30
+  # Leaf size for voxel filter applied to the template model before registration.
+  pre_voxel_grid_leaf_size: 0.04
+  # Leaf size for voxel filter applied to the transformed template model after registration.
+  post_voxel_grid_leaf_size: 0.01
+  # The search radius for normal estimation of the transformed template.
+  normal_search_radius: 0.03
+  # This value is used for non-rigidly transforming a rotation basis.
+  basis_scale: 0.1
+
+mesh_reconstruction:
+  # Specifies which method to use.
+  # This can be either "greedy" for greedy projection triangulation or "delauny" for delauny triangulation.
+  method: "greedy"
+
+  # greedy parameters
+  greedy:
+    # Maximum distance between connected points (maximum edge length).
+    search_radius: 0.05
+    # Maximum acceptable distance for a point to be considered,
+    # relative to the distance of the nearest point.
+    relative_max_distance: 2.5
+    # How many neighbors are searched for
+    max_nearest_neighbors: 100
+    # Points will not be connected to the current point
+    #	if their normals deviate more than the specified angle.
+    max_surface_angle: 0.78539 # 45 degrees
+    # Minimum and maximum angle there can be in a triangle.
+    # The first is not guaranteed, the second is.
+    min_angle: 0.17453 # 10 degrees
+    max_angle: 2.96705 # 170 degrees
+    # If false, the direction of normals will not be taken into account
+    # when computing the angle between them.
+    normal_consistency: true
+
+  # delauny parameters
+  delauny:
+    # Specify alpha (or distance) value to control output of this filter.
+    # For a non-zero alpha value, only edges or triangles contained within
+    # a sphere centered at mesh vertices will be output. Otherwise, only
+    # triangles will be output.
+    alpha: 0.01
+    # Specify a tolerance to control discarding of closely spaced points.
+    # This tolerance is specified as a fraction of the diagonal length of
+    # the bounding box of the points.
+    tolerance: 0.01
+    # Specify a multiplier to control the size of the initial, bounding
+    # Delaunay triangulation.
+    offset: 1

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+
+    <include file="$(find chair_manipulation_grasp_planning)/launch/lift.launch" />
+
+</launch>

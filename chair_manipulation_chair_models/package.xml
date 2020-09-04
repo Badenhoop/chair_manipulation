@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>chair_manipulation_chair_models</name>
+  <version>0.0.0</version>
+  <description>A package containing 3D chair models.</description>
+
+  <maintainer email="philipp.badenhoop@hellocodeblog.com">Philipp Badenhoop</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <exec_depend>gazebo_ros</exec_depend>
+
+  <export>
+    <gazebo_ros gazebo_model_path="${prefix}/models"/>
+    <gazebo_ros gazebo_media_path="${prefix}/models"/>
+  </export>
+
+</package>

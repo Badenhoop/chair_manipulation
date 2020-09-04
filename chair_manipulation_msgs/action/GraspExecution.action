@@ -1,0 +1,17 @@
+int32 PREPARE = 1
+int32 PLAN_PRE_GRASP = 2
+int32 EXECUTE_PRE_GRASP = 3
+int32 PLAN_GRASP = 4
+int32 EXECUTE_GRASP = 5
+int32 PLAN_LIFT = 6
+int32 EXECUTE_LIFT = 7
+
+int32 goal
+
+---
+
+# no result
+
+---
+
+# no feedback

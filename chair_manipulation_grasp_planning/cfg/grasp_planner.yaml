@@ -1,0 +1,48 @@
+arms_group: arms
+
+world_frame: world
+
+robot1_end_effector_frame: robot1_wrist_3_link
+robot2_end_effector_frame: robot2_wrist_3_link
+
+robot1_tcp_frame: robot1_tcp
+robot2_tcp_frame: robot2_tcp
+
+robot1_grasp_frame: robot1_grasp
+robot2_grasp_frame: robot2_grasp
+
+robot1_planned_pre_grasp_frame: robot1_planned_pre_grasp
+robot2_planned_pre_grasp_frame: robot2_planned_pre_grasp
+
+robot1_planned_grasp_frame: robot1_planned_grasp
+robot2_planned_grasp_frame: robot2_planned_grasp
+
+robot1_planned_lift_frame: robot1_planned_lift
+robot2_planned_lift_frame: robot2_planned_lift
+
+robot1_gripper_command_action_ns: robot1_gripper_cmd
+robot2_gripper_command_action_ns: robot2_gripper_cmd
+
+planning_attempts: 20
+planning_attempt_time: 5
+pre_grasp_distance: 0.1
+lift_height: 0.1
+max_velocity_scaling_factor: 1.0
+position_tolerance: 0.01
+object_mesh_topic: /reconstructed_mesh
+# The list of links which the gripper can touch the object
+touch_links:
+  - robot1_robotiq_arg2f_base_link
+  - robot1_left_inner_finger_pad
+  - robot1_left_inner_finger
+  - robot1_left_inner_knuckle
+  - robot1_right_inner_finger_pad
+  - robot1_right_inner_finger
+  - robot1_right_inner_knuckle
+  - robot2_robotiq_arg2f_base_link
+  - robot2_left_inner_finger_pad
+  - robot2_left_inner_finger
+  - robot2_left_inner_knuckle
+  - robot2_right_inner_finger_pad
+  - robot2_right_inner_finger
+  - robot2_right_inner_knuckle

@@ -1,0 +1,21 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl wenge
+Ka 0.000000 0.000000 0.000000
+Kd 0.254902 0.215686 0.180392
+Ks 0.330000 0.330000 0.330000
+map_Kd e4265ddbf415ef1877fe0205d04e5011_obj0_object/wenge.bmp
+
+newmtl Metal_Seamed
+Ka 0.000000 0.000000 0.000000
+Kd 0.156863 0.156863 0.152941
+Ks 0.330000 0.330000 0.330000
+map_Kd e4265ddbf415ef1877fe0205d04e5011_obj0_object/Metal_Seamed.jpg
+
+newmtl M_0054_LightYellow
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 0.878431
+Ks 0.330000 0.330000 0.330000
+

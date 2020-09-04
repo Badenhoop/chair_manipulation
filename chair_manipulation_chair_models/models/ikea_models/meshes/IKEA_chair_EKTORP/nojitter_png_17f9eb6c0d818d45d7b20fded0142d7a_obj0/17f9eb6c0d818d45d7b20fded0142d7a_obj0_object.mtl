@@ -1,0 +1,20 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl Wood_Cherry_Original
+Ka 0.000000 0.000000 0.000000
+Kd 0.596078 0.337255 0.164706
+Ks 0.330000 0.330000 0.330000
+map_Kd 17f9eb6c0d818d45d7b20fded0142d7a_obj0_object/Wood_Cherry_Original.jpg
+
+newmtl M_0107_MidnightBlue
+Ka 0.000000 0.000000 0.000000
+Kd 0.098039 0.098039 0.439216
+Ks 0.330000 0.330000 0.330000
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+

@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro"
+	   name="dual_arm_manipulator">
+
+    <!-- Specifies simulated hardware interface used by gazebo.
+		 Although the real hardware uses a position joint interface, it makes more sense to
+		 use the 'EffortJointInterface' for simulation. 
+		 This is because when using the 'PositionJointInterface', gazebo uses 
+		 the Joint.SetPosition() method which forces the simulation to adapt the specified joint
+		 position and may lead to weird behaviors in collisions.
+		 Note that, when using the 'EffortJointInterface', you also have to specify
+		a 'effort_controllers/JointTrajectoryController' controller which requires to set PID gains.
+     -->
+    <xacro:arg name="arm_transmission_hw_interface" default="hardware_interface/PositionJointInterface"/>
+	<xacro:arg name="gripper_transmission_hw_interface" default="hardware_interface/PositionJointInterface"/>
+
+    <!-- MoveIt! seems to have difficulties with finding plans for the UR with full joint limits [-2pi, 2pi]. 
+         The limited version uses joint limits restricted to [-pi,pi].
+    -->
+    <xacro:arg name="limited" default="false"/>
+
+	<!-- position and rotation of the first robot in the world frame -->
+	<xacro:arg name="robot1_x" default="0.7"/>
+	<xacro:arg name="robot1_y" default="0.7"/>
+	<xacro:arg name="robot1_z" default="0.01"/>
+	<xacro:arg name="robot1_roll" default="0.0"/>
+	<xacro:arg name="robot1_pitch" default="0.0"/>
+	<xacro:arg name="robot1_yaw" default="2.35619"/>
+
+    <!-- position and rotation of the second robot in the world frame -->
+	<xacro:arg name="robot2_x" default="-0.7"/>
+	<xacro:arg name="robot2_y" default="-0.7"/>
+	<xacro:arg name="robot2_z" default="0.01"/>
+	<xacro:arg name="robot2_roll" default="0.0"/>
+	<xacro:arg name="robot2_pitch" default="0.0"/>
+	<xacro:arg name="robot2_yaw" default="-0.78539"/>
+
+	<xacro:include filename="$(find ur10_robotiq_2f_140_description)/urdf/ur10_robotiq_2f_140.urdf.xacro" />
+
+	<!-- first universal robot UR10 with Robotiq 2f 140 gripper -->
+	<xacro:ur10_robotiq_2f_140_robot prefix="robot1_" joint_limited="$(arg limited)" 
+		arm_transmission_hw_interface="$(arg arm_transmission_hw_interface)" 
+		gripper_transmission_hw_interface="$(arg gripper_transmission_hw_interface)" 
+	/>
+
+    <!-- second universal robot UR10 with Robotiq 2f 140 gripper -->
+    <xacro:ur10_robotiq_2f_140_robot prefix="robot2_" joint_limited="$(arg limited)" 
+		arm_transmission_hw_interface="$(arg arm_transmission_hw_interface)" 
+		gripper_transmission_hw_interface="$(arg gripper_transmission_hw_interface)" 
+	/>
+
+	<!-- used for fixing robot to Gazebo 'base_link' -->
+	<link name="world" />
+
+	<!-- attach first ur10 to world frame -->
+	<joint name="robot1_world_joint" type="fixed">
+		<parent link="world" />
+		<child link = "robot1_base_link" />
+		<origin xyz="$(arg robot1_x) $(arg robot1_y) $(arg robot1_z)" rpy="$(arg robot1_roll) $(arg robot1_pitch) $(arg robot1_yaw)" />
+	</joint>
+
+    <!-- attach second ur10 to world frame -->
+	<joint name="robot2_world_joint" type="fixed">
+		<parent link="world" />
+		<child link = "robot2_base_link" />
+		<origin xyz="$(arg robot2_x) $(arg robot2_y) $(arg robot2_z)" rpy="$(arg robot2_roll) $(arg robot2_pitch) $(arg robot2_yaw)" />
+	</joint>
+
+	<!-- load ros_control gazebo plugin -->
+	<gazebo>
+    	<plugin name="ros_control" filename="libgazebo_ros_control.so" />
+	</gazebo>
+		
+</robot>

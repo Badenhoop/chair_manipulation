@@ -11,8 +11,13 @@
   <buildtool_depend>catkin</buildtool_depend>
   
   <exec_depend>chair_manipulation_gazebo</exec_depend>
-  <exec_depend>chair_manipulation_grasp_detection</exec_depend>
-  <exec_depend>chair_manipulation_grasp_planning</exec_depend>
+  <exec_depend>chair_manipulation_grasp_detection_simple</exec_depend>
+  <exec_depend>chair_manipulation_grasp_detection_advanced</exec_depend>
+  <exec_depend>chair_manipulation_msgs</exec_depend>
+  <exec_depend>chair_manipulation_chair_models</exec_depend>
+  <exec_depend>dual_arm_manipulator_description</exec_depend>
+  <exec_depend>dual_arm_manipulator_gazebo</exec_depend>
+  <exec_depend>dual_arm_manipulator_moveit_config</exec_depend>
 
   <export>
     <metapackage/>

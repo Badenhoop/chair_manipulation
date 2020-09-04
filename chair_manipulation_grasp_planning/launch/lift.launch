@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="debug" default="false" />
+  <env if="$(arg debug)" name="ROSCONSOLE_CONFIG_FILE"
+       value="$(find chair_manipulation_grasp_planning)/cfg/rosconsole.conf" />
+
+  <node name="robot1_gripper_command_action_server" pkg="chair_manipulation_grasp_planning" type="gripper_command_action_server_node" output="screen">
+    <param name="action_ns" value="robot1_gripper_cmd" />
+    <param name="left_finger_action_ns" value="/robot1_left_finger_action_controller/gripper_cmd" />
+    <param name="right_finger_action_ns" value="/robot1_right_finger_action_controller/gripper_cmd" />
+  </node>
+
+  <node name="robot2_gripper_command_action_server" pkg="chair_manipulation_grasp_planning" type="gripper_command_action_server_node" output="screen">
+    <param name="action_ns" value="robot2_gripper_cmd" />
+    <param name="left_finger_action_ns" value="/robot2_left_finger_action_controller/gripper_cmd" />
+    <param name="right_finger_action_ns" value="/robot2_right_finger_action_controller/gripper_cmd" />
+  </node>
+
+  <node name="lift_chair" pkg="chair_manipulation_grasp_planning" type="grasp_planner_node" output="screen">
+    <rosparam file="$(find chair_manipulation_grasp_planning)/cfg/grasp_planner.yaml" />
+  </node>
+
+</launch>

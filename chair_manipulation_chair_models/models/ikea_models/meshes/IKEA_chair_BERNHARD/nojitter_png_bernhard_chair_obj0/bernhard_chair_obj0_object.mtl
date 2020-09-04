@@ -1,0 +1,20 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl Color_008
+Ka 0.000000 0.000000 0.000000
+Kd 0.388235 0.388235 0.388235
+Ks 0.330000 0.330000 0.330000
+
+newmtl Color_002
+Ka 0.000000 0.000000 0.000000
+Kd 0.776471 0.776471 0.776471
+Ks 0.330000 0.330000 0.330000
+
+newmtl Material2
+Ka 0.000000 0.000000 0.000000
+Kd 0.113725 0.098039 0.090196
+Ks 0.330000 0.330000 0.330000
+map_Kd bernhard_chair_obj0_object/Material2.jpg
+

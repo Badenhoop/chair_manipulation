@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>dual_arm_manipulator_description</name>
+  <version>0.0.0</version>
+  <description>A package that defines a urdf description for a the dual arm manipulator used in this project.</description>
+
+  <maintainer email="philipp.badenhoop@hellocodeblog.com">Philipp Badenhoop</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>ur10_robotiq_2f_140_description</exec_depend>
+
+</package>

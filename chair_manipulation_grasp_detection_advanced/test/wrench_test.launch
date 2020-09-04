@@ -1,0 +1,5 @@
+<launch>
+  <node name="wrench_test" pkg="chair_manipulation_grasp_detection_advanced" type="wrench_test" output="screen">
+    <param name="contacts" value="0.04 0.000415997 0.129796 -4.90153e-12 -1 -0 -3.57208e-17 0.039584 0.129796 -4.89499e-12 1 -5.20743e-14 0.00848382 -1.2533e-20 0.667386 3.12043e-12 -1 2.92826e-13 0.0592361 0.03 0.67777 6.93844e-13 1 2.82817e-14" />
+  </node>
+</launch>

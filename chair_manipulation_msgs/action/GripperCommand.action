@@ -1,0 +1,12 @@
+int32 OPEN = 1
+int32 CLOSE = 2
+
+int32 goal
+
+---
+
+# no result
+
+---
+
+# no feedback

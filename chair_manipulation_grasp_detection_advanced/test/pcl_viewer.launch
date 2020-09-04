@@ -1,0 +1,7 @@
+<launch>
+  <arg name="cloud_topic" default="cloud_registered" />
+  <node name="pcl_viewer" pkg="chair_manipulation_grasp_detection_advanced" type="pcl_viewer"
+        output="screen">
+    <param name="cloud_topic" value="$(arg cloud_topic)" />
+  </node>
+</launch>

@@ -1,0 +1,20 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl Wood_Grain_Light
+Ka 0.000000 0.000000 0.000000
+Kd 0.929412 0.929412 0.929412
+Ks 0.330000 0.330000 0.330000
+map_Kd f0117813fb2e0f423f7f3ed2c3c690fe_obj0_object/Wood_Grain_Light.jpg
+
+newmtl Ikea_Hemnes_Black_Brown
+Ka 0.000000 0.000000 0.000000
+Kd 0.086275 0.070588 0.062745
+Ks 0.330000 0.330000 0.330000
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+

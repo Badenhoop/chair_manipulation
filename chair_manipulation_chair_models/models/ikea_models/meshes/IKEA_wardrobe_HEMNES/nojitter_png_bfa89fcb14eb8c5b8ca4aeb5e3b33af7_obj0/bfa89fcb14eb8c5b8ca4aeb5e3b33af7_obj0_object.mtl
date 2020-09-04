@@ -1,0 +1,15 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl Hemnes_skrina
+Ka 0.000000 0.000000 0.000000
+Kd 0.494118 0.415686 0.360784
+Ks 0.330000 0.330000 0.330000
+map_Kd bfa89fcb14eb8c5b8ca4aeb5e3b33af7_obj0_object/Hemnes_skrina.jpg
+
+newmtl Hemnes_gombik
+Ka 0.000000 0.000000 0.000000
+Kd 0.227451 0.227451 0.227451
+Ks 0.330000 0.330000 0.330000
+

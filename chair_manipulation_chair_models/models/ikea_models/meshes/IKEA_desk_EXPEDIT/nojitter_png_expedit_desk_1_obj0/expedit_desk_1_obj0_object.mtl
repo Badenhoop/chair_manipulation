@@ -1,0 +1,15 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl Wood_brownblack
+Ka 0.000000 0.000000 0.000000
+Kd 0.168627 0.117647 0.058824
+Ks 0.330000 0.330000 0.330000
+map_Kd expedit_desk_1_obj0_object/Wood_brownblack.jpg
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+

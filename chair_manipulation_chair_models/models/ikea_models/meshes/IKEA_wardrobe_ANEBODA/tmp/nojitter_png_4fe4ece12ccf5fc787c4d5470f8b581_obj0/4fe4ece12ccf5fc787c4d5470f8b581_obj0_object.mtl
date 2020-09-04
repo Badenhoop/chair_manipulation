@@ -1,0 +1,17 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl _Wood_cherry_5
+Ka 0.000000 0.000000 0.000000
+Kd 0.898039 0.827451 0.619608
+Ks 0.330000 0.330000 0.330000
+map_Kd 4fe4ece12ccf5fc787c4d5470f8b581_obj0_object/_Wood_cherry_5.jpg
+
+newmtl _CorrogateRust_5
+Ka 0.000000 0.000000 0.000000
+Kd 0.878431 0.878431 0.878431
+Ks 0.330000 0.330000 0.330000
+d 0.890000
+map_Kd 4fe4ece12ccf5fc787c4d5470f8b581_obj0_object/_CorrogateRust_5.jpg
+

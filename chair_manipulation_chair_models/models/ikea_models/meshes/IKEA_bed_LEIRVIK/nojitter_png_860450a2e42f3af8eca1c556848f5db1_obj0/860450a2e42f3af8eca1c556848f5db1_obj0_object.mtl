@@ -1,0 +1,32 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl DG_Fabric_napoli___lime
+Ka 0.000000 0.000000 0.000000
+Kd 0.486275 0.552941 0.411765
+Ks 0.330000 0.330000 0.330000
+map_Kd 860450a2e42f3af8eca1c556848f5db1_obj0_object/DG_Fabric_napoli___lime.jpg
+
+newmtl DG_Fabric_tsuga_tourmaline
+Ka 0.000000 0.000000 0.000000
+Kd 0.627451 0.776471 0.227451
+Ks 0.330000 0.330000 0.330000
+map_Kd 860450a2e42f3af8eca1c556848f5db1_obj0_object/DG_Fabric_tsuga_tourmaline.jpg
+
+newmtl M_1___Default1
+Ka 0.000000 0.000000 0.000000
+Kd 0.674510 0.619608 0.654902
+Ks 0.330000 0.330000 0.330000
+map_Kd 860450a2e42f3af8eca1c556848f5db1_obj0_object/M_1___Default1.jpg
+
+newmtl Color_000
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+

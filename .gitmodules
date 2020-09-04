@@ -1,0 +1,6 @@
+[submodule "ros_wrappers/cpd_wrapper/cpd"]
+	path = ros_wrappers/cpd_wrapper/cpd
+	url = https://github.com/Badenhoop/cpd
+[submodule "ros_wrappers/nanoflann_wrapper/nanoflann"]
+	path = ros_wrappers/nanoflann_wrapper/nanoflann
+	url = https://github.com/jlblancoc/nanoflann

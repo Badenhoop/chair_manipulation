@@ -1,0 +1,15 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl Material2
+Ka 0.000000 0.000000 0.000000
+Kd 0.890196 0.745098 0.462745
+Ks 0.330000 0.330000 0.330000
+map_Kd 4ca29321dadaae90a516b539b31607a2_obj0_object/Material2.jpg
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 0.890196 0.882353 0.870588
+Ks 0.330000 0.330000 0.330000
+

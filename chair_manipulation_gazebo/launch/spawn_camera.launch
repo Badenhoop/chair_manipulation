@@ -14,12 +14,12 @@
     x:=$(arg x) y:=$(arg y) z:=$(arg z) roll:=$(arg roll) pitch:=$(arg pitch) yaw:=$(arg yaw)" />
 
   <!-- spawn camera -->
-  <node name="spawn_camera" pkg="gazebo_ros" type="spawn_model" 
+  <node name="$(arg camera_name)_spawn_camera" pkg="gazebo_ros" type="spawn_model" 
     args="-urdf -param camera_description -model $(arg camera_name)" 
     respawn="false" output="screen" />
   
   <!-- robot state publisher for tf -->
-  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+  <node name="$(arg camera_name)_robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
     <remap from="robot_description" to="camera_description" />
     <param name="publish_frequency" type="double" value="50.0" />
     <param name="tf_prefix" type="string" value="$(arg tf_prefix)" />

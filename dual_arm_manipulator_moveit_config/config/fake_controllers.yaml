@@ -1,0 +1,48 @@
+controller_list:
+  - name: fake_robot1_arm_controller
+    joints:
+      - robot1_shoulder_pan_joint
+      - robot1_shoulder_lift_joint
+      - robot1_elbow_joint
+      - robot1_wrist_1_joint
+      - robot1_wrist_2_joint
+      - robot1_wrist_3_joint
+  - name: fake_robot1_gripper_controller
+    joints:
+      - robot1_left_finger_joint
+      - robot1_right_finger_joint
+  - name: fake_robot2_arm_controller
+    joints:
+      - robot2_shoulder_pan_joint
+      - robot2_shoulder_lift_joint
+      - robot2_elbow_joint
+      - robot2_wrist_1_joint
+      - robot2_wrist_2_joint
+      - robot2_wrist_3_joint
+  - name: fake_robot2_gripper_controller
+    joints:
+      - robot2_left_finger_joint
+      - robot2_right_finger_joint
+  - name: fake_arms_controller
+    joints:
+      - robot1_shoulder_pan_joint
+      - robot1_shoulder_lift_joint
+      - robot1_elbow_joint
+      - robot1_wrist_1_joint
+      - robot1_wrist_2_joint
+      - robot1_wrist_3_joint
+      - robot2_shoulder_pan_joint
+      - robot2_shoulder_lift_joint
+      - robot2_elbow_joint
+      - robot2_wrist_1_joint
+      - robot2_wrist_2_joint
+      - robot2_wrist_3_joint
+initial:  # Define initial robot poses.
+  - group: robot1_arm
+    pose: robot1_home
+  - group: robot1_gripper
+    pose: robot1_open
+  - group: robot2_arm
+    pose: robot2_home
+  - group: robot2_gripper
+    pose: robot2_open

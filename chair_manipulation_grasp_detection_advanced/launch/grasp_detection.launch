@@ -1,0 +1,11 @@
+<launch>
+  <arg name="debug" default="false" />
+  <env if="$(arg debug)" name="ROSCONSOLE_CONFIG_FILE"
+       value="$(find chair_manipulation_grasp_detection_advanced)/cfg/rosconsole.conf" />
+  <node name="grasp_detection" pkg="chair_manipulation_grasp_detection_advanced" type="grasp_detection_node" output="screen">
+    <rosparam file="$(find chair_manipulation_grasp_detection_advanced)/cfg/pipeline.yaml" subst_value="true" />
+    <rosparam file="$(find chair_manipulation_grasp_detection_advanced)/cfg/grasp_database.yaml" param="grasp_database" />
+    <param name="gripper_urdf" command="cat $(find chair_manipulation_grasp_detection_advanced)/cfg/gripper/robotiq_2f_140.urdf" />
+    <param name="gripper_srdf" command="cat $(find chair_manipulation_grasp_detection_advanced)/cfg/gripper/robotiq_2f_140.srdf" />
+  </node>
+</launch>

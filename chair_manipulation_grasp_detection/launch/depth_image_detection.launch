@@ -1,5 +1,0 @@
-<launch>
-  <node name="grasp_detection" pkg="chair_manipulation_grasp_detection" type="depth_image_detection_node" output="screen">
-    <rosparam file="$(find chair_grasp_detection)/cfg/depth_image_detection.yaml" />
-  </node>
-</launch>

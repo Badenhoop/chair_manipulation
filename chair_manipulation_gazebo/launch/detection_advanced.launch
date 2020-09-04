@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+  <include file="$(find chair_manipulation_grasp_detection_advanced)/launch/point_cloud_segmentation.launch">
+    <arg name="debug" value="false" />
+  </include>
+
+  <include file="$(find chair_manipulation_grasp_detection_advanced)/launch/grasp_detection.launch">
+    <arg name="debug" value="true" />
+  </include>
+
+</launch>

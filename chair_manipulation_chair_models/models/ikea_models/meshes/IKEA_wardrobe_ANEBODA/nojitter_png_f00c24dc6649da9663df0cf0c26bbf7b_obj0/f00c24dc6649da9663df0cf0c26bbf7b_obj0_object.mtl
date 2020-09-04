@@ -1,0 +1,15 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl M_71928_PE187560_S1
+Ka 0.000000 0.000000 0.000000
+Kd 0.937255 0.937255 0.941176
+Ks 0.330000 0.330000 0.330000
+map_Kd f00c24dc6649da9663df0cf0c26bbf7b_obj0_object/M_71928_PE187560_S1.jpg
+

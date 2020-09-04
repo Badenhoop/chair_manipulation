@@ -1,0 +1,38 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl _Metal_Corrogated_Shiny_2
+Ka 0.000000 0.000000 0.000000
+Kd 0.823529 0.823529 0.831373
+Ks 0.330000 0.330000 0.330000
+map_Kd vika_desk_1_obj0_object/_Metal_Corrogated_Shiny_2.jpg
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl _Metal_Corrogated_Shiny__1
+Ka 0.000000 0.000000 0.000000
+Kd 0.756863 0.756863 0.756863
+Ks 0.330000 0.330000 0.330000
+map_Kd vika_desk_1_obj0_object/_Metal_Corrogated_Shiny__1.jpg
+
+newmtl Metal_Aluminum_Anodized
+Ka 0.000000 0.000000 0.000000
+Kd 0.792157 0.819608 0.858824
+Ks 0.330000 0.330000 0.330000
+d 0.610000
+map_Kd vika_desk_1_obj0_object/Metal_Aluminum_Anodized.jpg
+
+newmtl _Snow_
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 0.980392 0.980392
+Ks 0.330000 0.330000 0.330000
+
+newmtl Color_D05
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 0.949020 0.800000
+Ks 0.330000 0.330000 0.330000
+

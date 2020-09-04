@@ -1,0 +1,4 @@
+malm_bed_1_obj0_object
+malm_bed_2_obj0_object
+malm_bed_3_obj0_object
+malm_bed_4_obj0_object

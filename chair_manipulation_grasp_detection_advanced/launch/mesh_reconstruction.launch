@@ -1,0 +1,9 @@
+<launch>
+  <arg name="debug" default="false" />
+  <env if="$(arg debug)" name="ROSCONSOLE_CONFIG_FILE"
+       value="$(find chair_manipulation_grasp_detection_advanced)/cfg/rosconsole.conf" />
+  <node name="mesh_reconstruction_node" pkg="chair_manipulation_grasp_detection_advanced" type="mesh_reconstruction_node" output="screen">
+    <rosparam file="$(find chair_manipulation_grasp_detection_advanced)/cfg/pipeline.yaml" subst_value="true" />
+    <rosparam file="$(find chair_manipulation_grasp_detection_advanced)/cfg/grasp_database.yaml" param="grasp_database" />
+  </node>
+</launch>

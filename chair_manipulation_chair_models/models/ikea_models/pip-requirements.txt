@@ -1,0 +1,7 @@
+trimesh
+numpy
+networkx
+scipy
+pillow
+jinja2
+requests

@@ -1,0 +1,22 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl Wood___Blond
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 0.894118 0.717647
+Ks 0.330000 0.330000 0.330000
+map_Kd 3d1a0d8cffd60a7ba24bd1faebd6fb35_obj0_object/Wood___Blond.jpg
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Textured_Translucent_Plastic
+Ka 0.000000 0.000000 0.000000
+Kd 0.956863 0.937255 0.925490
+Ks 0.330000 0.330000 0.330000
+d 0.800000
+map_Kd 3d1a0d8cffd60a7ba24bd1faebd6fb35_obj0_object/Textured_Translucent_Plastic.jpg
+

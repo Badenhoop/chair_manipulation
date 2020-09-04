@@ -1,0 +1,22 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl Metal_Seamed
+Ka 0.000000 0.000000 0.000000
+Kd 0.462745 0.466667 0.450980
+Ks 0.330000 0.330000 0.330000
+map_Kd fd621b2c1bdd8fbbab40048b8ab8e8f_obj0_object/Metal_Seamed.jpg
+
+newmtl _Metal_Seamed_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.462745 0.466667 0.450980
+Ks 0.330000 0.330000 0.330000
+map_Kd fd621b2c1bdd8fbbab40048b8ab8e8f_obj0_object/_Metal_Seamed_1.jpg
+
+newmtl tablewood
+Ka 0.000000 0.000000 0.000000
+Kd 0.168627 0.094118 0.050980
+Ks 0.330000 0.330000 0.330000
+map_Kd fd621b2c1bdd8fbbab40048b8ab8e8f_obj0_object/tablewood.JPG
+

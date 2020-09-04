@@ -1,0 +1,20 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl Black_plastic
+Ka 0.000000 0.000000 0.000000
+Kd 0.117647 0.117647 0.117647
+Ks 0.330000 0.330000 0.330000
+
+newmtl Gray_paint
+Ka 0.000000 0.000000 0.000000
+Kd 0.737255 0.737255 0.737255
+Ks 0.330000 0.330000 0.330000
+
+newmtl Gray_textile
+Ka 0.000000 0.000000 0.000000
+Kd 0.192157 0.188235 0.215686
+Ks 0.330000 0.330000 0.330000
+map_Kd f495c500ef468ea781a172d69c52a28a_obj0_object/Gray_textile.jpg
+

@@ -1,0 +1,6 @@
+6d311facc6387a7fcd1233d74066ed8_obj0_object
+b0f12854a8e0c723bd1f60c111786ed_obj0_object
+fd621b2c1bdd8fbbab40048b8ab8e8f_obj0_object
+klubbo_table_1_obj0_object
+klubbo_table_2_obj0_object
+klubbo_table_3_obj0_object

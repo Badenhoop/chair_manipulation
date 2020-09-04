@@ -1,0 +1,14 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl black_plastic
+Ka 0.000000 0.000000 0.000000
+Kd 0.227451 0.227451 0.227451
+Ks 0.330000 0.330000 0.330000
+
+newmtl Color_A25
+Ka 0.000000 0.000000 0.000000
+Kd 0.094118 0.082353 0.082353
+Ks 0.330000 0.330000 0.330000
+

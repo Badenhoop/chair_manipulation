@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>chair_manipulation_msgs</name>
+  <version>0.0.0</version>
+  <description>Message definitions for chair_manipulation</description>
+
+  <maintainer email="philipp.badenhoop@hellocodeblog.com">Philipp Badenhoop</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>actionlib_msgs</depend>
+  <depend>message_generation</depend>
+  <depend>std_msgs</depend>
+  <exec_depend>message_runtime</exec_depend>
+
+</package>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>chair_manipulation_grasp_detection_advanced</name>
+  <version>0.0.0</version>
+  <description>A package to detect grasps for chairs</description>
+
+  <maintainer email="philipp.badenhoop@hellocodeblog.com">Philipp Badenhoop</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>chair_manipulation_chair_models</depend>
+  <depend>roscpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>shape_msgs</depend>
+  <depend>geometric_shapes</depend>
+  <depend>pcl_msgs</depend>
+  <depend>pcl_ros</depend>
+  <depend>pcl_conversions</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_eigen</depend>
+  <depend>moveit_core</depend>
+  <depend>moveit_ros_planning_interface</depend>
+  <depend>moveit_visual_tools</depend>
+  <depend>cpd_wrapper</depend>
+  <depend>nanoflann_wrapper</depend>
+  <depend>libqhull</depend>
+
+</package>

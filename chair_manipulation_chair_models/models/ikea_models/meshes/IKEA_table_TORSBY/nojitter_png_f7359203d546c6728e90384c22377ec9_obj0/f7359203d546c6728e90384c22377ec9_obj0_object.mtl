@@ -1,0 +1,16 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl Metal_Aluminum_Anodized
+Ka 0.000000 0.000000 0.000000
+Kd 0.792157 0.819608 0.858824
+Ks 0.330000 0.330000 0.330000
+map_Kd f7359203d546c6728e90384c22377ec9_obj0_object/Metal_Aluminum_Anodized.jpg
+
+newmtl Material12
+Ka 0.000000 0.000000 0.000000
+Kd 0.917647 0.952941 1.000000
+Ks 0.330000 0.330000 0.330000
+d 0.530000
+

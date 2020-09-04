@@ -1,0 +1,6 @@
+<launch>
+  <env name="ROSCONSOLE_CONFIG_FILE"
+       value="$(find chair_manipulation_grasp_detection_advanced)/cfg/rosconsole.conf"/>
+  <node name="registration_test" pkg="chair_manipulation_grasp_detection_advanced" type="registration_test"
+        output="screen"/>
+</launch>

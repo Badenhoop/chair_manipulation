@@ -1,0 +1,15 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl M_3_black
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl KIVIK_Svanby_grey
+Ka 0.000000 0.000000 0.000000
+Kd 0.572549 0.560784 0.545098
+Ks 0.330000 0.330000 0.330000
+map_Kd kivik_sofa_2_obj0_object/KIVIK_Svanby_grey.JPG
+

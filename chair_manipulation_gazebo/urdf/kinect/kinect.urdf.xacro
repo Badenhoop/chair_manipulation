@@ -43,15 +43,15 @@
 			<visual>
 			 <origin xyz="0 0 0" rpy="0 0 ${pi/2}"/>
 				<geometry>
-				<mesh filename="package://common_sensors/meshes/sensors/kinect.dae"/>
+				<mesh filename="package://chair_manipulation_gazebo/meshes/sensors/kinect.dae"/>
 				</geometry>
 			</visual>
-			<collision>
+			<!-- <collision>
 				<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
 				<geometry>
 					<box size="0.07271 0.27794 0.073"/>
 				</geometry>
-			</collision>
+			</collision> -->
 			<inertial>
 				<mass value="0.001" />
 				<origin xyz="0 0 0" />

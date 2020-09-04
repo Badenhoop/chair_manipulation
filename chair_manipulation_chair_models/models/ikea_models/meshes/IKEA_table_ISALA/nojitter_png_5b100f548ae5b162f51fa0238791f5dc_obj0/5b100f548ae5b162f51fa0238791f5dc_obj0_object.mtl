@@ -1,0 +1,15 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl Color_K15
+Ka 0.000000 0.000000 0.000000
+Kd 0.576471 0.517647 0.564706
+Ks 0.330000 0.330000 0.330000
+
+newmtl Metal_Corrogated_Shiny
+Ka 0.000000 0.000000 0.000000
+Kd 0.756863 0.756863 0.756863
+Ks 0.330000 0.330000 0.330000
+map_Kd 5b100f548ae5b162f51fa0238791f5dc_obj0_object/Metal_Corrogated_Shiny.jpg
+

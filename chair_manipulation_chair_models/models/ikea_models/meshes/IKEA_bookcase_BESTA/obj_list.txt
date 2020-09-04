@@ -1,0 +1,3 @@
+besta_bookcase_1_obj0_object
+besta_bookcase_2_obj0_object
+besta_bookcase_3_obj0_object

@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<launch>
+
+  <!-- sensor configuration for Moveit -->
+  <rosparam ns="move_group" command="load" file="$(find chair_manipulation_gazebo)/cfg/sensors.yaml" />
+  <include file="$(find dual_arm_manipulator_moveit_config)/launch/dual_arm_manipulator_moveit_planning_execution.launch">
+    <arg name="use_rviz" value="false" />
+  </include>
+
+  <!-- rviz -->
+  <node name="$(anon rviz)" pkg="rviz" type="rviz" args="-d $(find chair_manipulation_gazebo)/cfg/scene.rviz" respawn="false" output="screen" />
+
+</launch>

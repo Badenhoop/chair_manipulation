@@ -1,0 +1,4 @@
+karlstad_sofa_1_obj0_object
+karlstad_sofa_2_obj0_object
+karlstad_sofa_3_obj0_object
+karlstad_sofa_4_obj0_object

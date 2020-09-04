@@ -1,0 +1,17 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl Wood_Bamboo_Medium
+Ka 0.000000 0.000000 0.000000
+Kd 0.694118 0.411765 0.168627
+Ks 0.330000 0.330000 0.330000
+map_Kd 8f08058c1a1a1c2aef94793a67b4c5c0_obj0_object/Wood_Bamboo_Medium.jpg
+
+newmtl Translucent_Glass_Corrugated
+Ka 0.000000 0.000000 0.000000
+Kd 0.552941 0.619608 0.568627
+Ks 0.330000 0.330000 0.330000
+d 0.800000
+map_Kd 8f08058c1a1a1c2aef94793a67b4c5c0_obj0_object/Translucent_Glass_Corrugated.jpg
+

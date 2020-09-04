@@ -1,0 +1,8 @@
+<launch>
+  <node name="gripper_test" pkg="chair_manipulation_grasp_detection_advanced" type="gripper_test" output="screen">
+<!--    <param name="tcp_pose" value="0.02 0.00414799 0.00586774 -0.413453 0.413453 0.573635 0.573635" />-->
+    <param name="tcp_pose" value="0.314355 0.015 0.575235 0 -0.707107 0 0.707107" />
+  </node>
+  <param name="robot_description"
+         command="cat $(find chair_manipulation_grasp_detection_advanced)/cfg/gripper/robotiq_2f_140.urdf"/>
+</launch>

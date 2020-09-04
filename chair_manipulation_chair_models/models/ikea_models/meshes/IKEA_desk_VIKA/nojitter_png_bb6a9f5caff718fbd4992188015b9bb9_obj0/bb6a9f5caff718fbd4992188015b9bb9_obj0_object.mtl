@@ -1,0 +1,15 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl stainless_steel
+Ka 0.000000 0.000000 0.000000
+Kd 0.619608 0.639216 0.678431
+Ks 0.330000 0.330000 0.330000
+map_Kd bb6a9f5caff718fbd4992188015b9bb9_obj0_object/stainless_steel.jpg
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+

@@ -1,0 +1,2 @@
+SNILLE_chair_1_obj0_object
+SNILLE_chair_2_obj0_object

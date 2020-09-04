@@ -1,0 +1,22 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl vuren_vertikaal_copy
+Ka 0.000000 0.000000 0.000000
+Kd 0.866667 0.705882 0.498039
+Ks 0.330000 0.330000 0.330000
+map_Kd fbdbb2db39f753c2b0957d845ac33749_obj0_object/vuren_vertikaal_copy.jpg
+
+newmtl vuren_horizontaal
+Ka 0.000000 0.000000 0.000000
+Kd 0.866667 0.705882 0.498039
+Ks 0.330000 0.330000 0.330000
+map_Kd fbdbb2db39f753c2b0957d845ac33749_obj0_object/vuren_horizontaal.jpg
+
+newmtl bouleau
+Ka 0.000000 0.000000 0.000000
+Kd 0.709804 0.658824 0.568627
+Ks 0.330000 0.330000 0.330000
+map_Kd fbdbb2db39f753c2b0957d845ac33749_obj0_object/bouleau.JPG
+

@@ -1,9 +1,30 @@
 <?xml version="1.0" ?>
+<!-- This is only used for testing -->
 <launch>
-  <arg name="command" default="move_up" />
+  <arg name="cmd" default="move_up" />
   <group ns="robot1">
-    <node name="move" pkg="chair_manipulation_grasp_planning" type="move" output="screen">
-      <param name="command" type="string" value="$(arg command)" />
+    <node name="move" pkg="chair_manipulation_grasp_planning" type="move_node" output="screen">
+      <param name="cmd" type="string" value="$(arg cmd)" />
+      <param name="prefix" value="robot1" />
+      <param name="gripper_group" value="robot1_gripper" />
+      <param name="gripper_command_action_ns" value="gripper" />
+    </node>
+    <node name="robot1_gripper_command_action_server" pkg="chair_manipulation_grasp_planning" type="gripper_command_action_server_node" output="screen">
+      <param name="action_ns" value="gripper" />
+      <param name="left_finger_action_ns" value="/robot1_left_finger_action_controller/gripper_cmd" />
+      <param name="right_finger_action_ns" value="/robot1_right_finger_action_controller/gripper_cmd" />
+    </node>
+  </group>
+  <group ns="robot2">
+    <node name="move" pkg="chair_manipulation_grasp_planning" type="move_node" output="screen">
+      <param name="cmd" type="string" value="$(arg cmd)" />
+      <param name="prefix" value="robot2" />
+      <param name="gripper_command_action_ns" value="gripper" />
+    </node>
+    <node name="robot2_gripper_command_action_server" pkg="chair_manipulation_grasp_planning" type="gripper_command_action_server_node" output="screen">
+      <param name="action_ns" value="gripper" />
+      <param name="left_finger_action_ns" value="/robot2_left_finger_action_controller/gripper_cmd" />
+      <param name="right_finger_action_ns" value="/robot2_right_finger_action_controller/gripper_cmd" />
     </node>
   </group>
 </launch>

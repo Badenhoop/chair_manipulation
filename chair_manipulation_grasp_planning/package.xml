@@ -10,6 +10,8 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
+  <depend>chair_manipulation_msgs</depend>
+  <depend>control_msgs</depend>
   <depend>pluginlib</depend>
   <depend>eigen</depend>
   <depend>moveit_core</depend>
@@ -18,6 +20,7 @@
   <depend>moveit_ros_perception</depend>
   <depend>interactive_markers</depend>
   <depend>geometric_shapes</depend>
+  <depend>shape_msgs</depend>
   <depend>moveit_visual_tools</depend>
   <depend>rviz_visual_tools</depend>
   <depend>pcl_ros</depend>

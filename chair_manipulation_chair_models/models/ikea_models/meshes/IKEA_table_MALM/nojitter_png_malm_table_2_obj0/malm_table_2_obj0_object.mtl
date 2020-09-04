@@ -1,0 +1,10 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl oak
+Ka 0.000000 0.000000 0.000000
+Kd 0.694118 0.654902 0.541176
+Ks 0.330000 0.330000 0.330000
+map_Kd malm_table_2_obj0_object/oak.jpg
+

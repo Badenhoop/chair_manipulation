@@ -1,0 +1,15 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl Wood_Grain_Light
+Ka 0.000000 0.000000 0.000000
+Kd 0.235294 0.231373 0.219608
+Ks 0.330000 0.330000 0.330000
+map_Kd 2805edee7092fb34cf7d397dd220c7e2_obj0_object/Wood_Grain_Light.jpg
+
+newmtl Color_000
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+

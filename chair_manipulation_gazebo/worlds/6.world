@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+    <physics type="ode">
+      <ode>
+      </ode>
+    </physics>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <pose>2.4 0.7 0 0 0 3.14159</pose>
+      <uri>model://IKEA_chair_HERMAN</uri>
+    </include>
+  </world>
+</sdf>

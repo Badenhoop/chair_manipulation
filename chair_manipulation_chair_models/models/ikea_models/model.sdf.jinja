@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.0'>
+  <model name='{{ IKEA_NAMES[0] }}'>
+    <static>0</static>
+    <link name='link_0'>
+      <inertial>
+        <mass>{{ MASS }}</mass>
+        <inertia>
+          <ixx>{{ INERTIA[0][0] }}</ixx>
+          <ixy>{{ INERTIA[0][1] }}</ixy>
+          <ixz>{{ INERTIA[0][2] }}</ixz>
+          <iyy>{{ INERTIA[1][1] }}</iyy>
+          <iyz>{{ INERTIA[1][2] }}</iyz>
+          <izz>{{ INERTIA[2][2] }}</izz>
+        </inertia>
+        <pose frame=''>{{ "%f %f %f" % (CENTER[0], CENTER[1], CENTER[2]) }} 0 -0 0</pose>
+      </inertial>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name='visual'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://{{ OBJFILENAME }}</uri>
+            <scale>{{ "%f %f %f" % (SCALE[0], SCALE[1], SCALE[2]) }}</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose frame=''>0 0 0 1.58096 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://{{ OBJFILENAME }}</uri>
+            <scale>{{ "%f %f %f" % (SCALE[0], SCALE[1], SCALE[2]) }}</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

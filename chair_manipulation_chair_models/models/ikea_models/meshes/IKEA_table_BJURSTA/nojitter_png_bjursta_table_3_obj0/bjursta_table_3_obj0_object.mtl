@@ -1,0 +1,21 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl BlackWood3
+Ka 0.000000 0.000000 0.000000
+Kd 0.047059 0.031373 0.007843
+Ks 0.330000 0.330000 0.330000
+map_Kd bjursta_table_3_obj0_object/BlackWood3.jpg
+
+newmtl LightWood3
+Ka 0.000000 0.000000 0.000000
+Kd 0.788235 0.549020 0.098039
+Ks 0.330000 0.330000 0.330000
+map_Kd bjursta_table_3_obj0_object/LightWood3.jpg
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+

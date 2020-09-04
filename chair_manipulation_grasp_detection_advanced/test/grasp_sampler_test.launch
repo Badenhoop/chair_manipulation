@@ -1,0 +1,4 @@
+<launch>
+  <node name="grasp_sampler_test" pkg="chair_manipulation_grasp_detection_advanced" type="grasp_sampler_test"
+        output="screen"/>
+</launch>

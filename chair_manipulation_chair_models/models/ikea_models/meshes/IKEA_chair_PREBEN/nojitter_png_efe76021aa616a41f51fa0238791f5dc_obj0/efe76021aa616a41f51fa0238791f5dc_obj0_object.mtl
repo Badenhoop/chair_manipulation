@@ -1,0 +1,26 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl Material4
+Ka 0.000000 0.000000 0.000000
+Kd 0.729412 0.694118 0.662745
+Ks 0.330000 0.330000 0.330000
+map_Kd efe76021aa616a41f51fa0238791f5dc_obj0_object/Material4.jpg
+
+newmtl _Metal_Aluminum_Anodized_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.792157 0.819608 0.858824
+Ks 0.330000 0.330000 0.330000
+map_Kd efe76021aa616a41f51fa0238791f5dc_obj0_object/_Metal_Aluminum_Anodized_1.jpg
+
+newmtl Color_009
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+

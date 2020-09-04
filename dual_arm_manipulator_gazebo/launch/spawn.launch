@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="limited" default="false" doc="If true, limits joint range [-PI, PI] on all joints." />
+  <arg name="robot_name" default="robot" doc="The name of the spawned model in gazebo. Must be unique across the world." />
+  <arg name="tf_prefix" default="" doc="The tf prefix used by the robot_state_publisher." />
+  
+  <!-- position, orientation and initial joint values of first robot -->
+  <arg name="robot1_x" default="-1.0" />
+  <arg name="robot1_y" default="0.0" />
+  <arg name="robot1_z" default="0.0" />
+  <arg name="robot1_roll" default="0.0" />
+  <arg name="robot1_pitch" default="0.0" />
+  <arg name="robot1_yaw" default="0.0" />
+  <arg name="robot1_shoulder_pan_joint" default="0.0" />
+  <arg name="robot1_shoulder_lift_joint" default="0.0" />
+  <arg name="robot1_elbow_joint" default="0.0" />
+  <arg name="robot1_wrist_1_joint" default="0.0" />
+  <arg name="robot1_wrist_2_joint" default="0.0" />
+  <arg name="robot1_wrist_3_joint" default="0.0" />
+  <arg name="robot1_left_finger_joint" default="0.0" />
+  <arg name="robot1_right_finger_joint" default="0.0" />
+
+  <!-- position, orientation and initial joint values of second robot -->
+  <arg name="robot2_x" default="1.0" />
+  <arg name="robot2_y" default="0.0" />
+  <arg name="robot2_z" default="0.0" />
+  <arg name="robot2_roll" default="0.0" />
+  <arg name="robot2_pitch" default="0.0" />
+  <arg name="robot2_yaw" default="0.0" />
+  <arg name="robot2_shoulder_pan_joint" default="0.0" />
+  <arg name="robot2_shoulder_lift_joint" default="0.0" />
+  <arg name="robot2_elbow_joint" default="0.0" />
+  <arg name="robot2_wrist_1_joint" default="0.0" />
+  <arg name="robot2_wrist_2_joint" default="0.0" />
+  <arg name="robot2_wrist_3_joint" default="0.0" />
+  <arg name="robot2_left_finger_joint" default="0.0" />
+  <arg name="robot2_right_finger_joint" default="0.0" />
+
+  <!-- send robot urdf to param server -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find dual_arm_manipulator_description)/urdf/dual_arm_manipulator_robot.urdf.xacro' 
+    limited:=$(arg limited) 
+    arm_transmission_hw_interface:=hardware_interface/EffortJointInterface
+    gripper_transmission_hw_interface:=hardware_interface/PositionJointInterface
+
+    robot1_x:=$(arg robot1_x) 
+    robot1_y:=$(arg robot1_y) 
+    robot1_z:=$(arg robot1_z) 
+    robot1_roll:=$(arg robot1_roll) 
+    robot1_pitch:=$(arg robot1_pitch) 
+    robot1_yaw:=$(arg robot1_yaw)
+
+    robot2_x:=$(arg robot2_x) 
+    robot2_y:=$(arg robot2_y) 
+    robot2_z:=$(arg robot2_z) 
+    robot2_roll:=$(arg robot2_roll) 
+    robot2_pitch:=$(arg robot2_pitch) 
+    robot2_yaw:=$(arg robot2_yaw)" />
+
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="$(arg robot_name)_spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" 
+    args="-urdf -param robot_description -model $(arg robot_name)
+    -J robot1_shoulder_pan_joint $(arg robot1_shoulder_pan_joint)
+    -J robot1_shoulder_lift_joint $(arg robot1_shoulder_lift_joint)
+    -J robot1_elbow_joint $(arg robot1_elbow_joint)
+    -J robot1_wrist_1_joint $(arg robot1_wrist_1_joint)
+    -J robot1_wrist_2_joint $(arg robot1_wrist_2_joint)
+    -J robot1_wrist_3_joint $(arg robot1_wrist_3_joint)
+    -J robot1_left_finger_joint $(arg robot1_left_finger_joint)
+    -J robot1_right_finger_joint $(arg robot1_right_finger_joint)
+
+    -J robot2_shoulder_pan_joint $(arg robot2_shoulder_pan_joint)
+    -J robot2_shoulder_lift_joint $(arg robot2_shoulder_lift_joint)
+    -J robot2_elbow_joint $(arg robot2_elbow_joint)
+    -J robot2_wrist_1_joint $(arg robot2_wrist_1_joint)
+    -J robot2_wrist_2_joint $(arg robot2_wrist_2_joint)
+    -J robot2_wrist_3_joint $(arg robot2_wrist_3_joint)
+    -J robot2_left_finger_joint $(arg robot2_left_finger_joint)
+    -J robot2_right_finger_joint $(arg robot2_right_finger_joint)" 
+    respawn="false" output="screen" />
+
+  <!-- controller parameters -->
+  <rosparam file="$(find dual_arm_manipulator_gazebo)/cfg/controllers.yaml" command="load"/>
+
+  <!-- spawn controllers -->
+  <node name="$(arg robot_name)_spawn_controllers" pkg="controller_manager" type="spawner" 
+    args="
+      robot1_arm_trajectory_controller
+      robot1_left_finger_action_controller
+      robot1_right_finger_action_controller
+
+      robot2_arm_trajectory_controller
+      robot2_left_finger_action_controller
+      robot2_right_finger_action_controller
+
+      joint_state_controller"
+    respawn="false" output="screen" />
+
+  <!-- robot state publisher for tf -->
+  <node name="$(arg robot_name)_robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="50.0" />
+    <param name="tf_prefix" type="string" value="$(arg tf_prefix)" />
+  </node>
+
+  <!-- fake calibration -->
+  <node name="$(arg robot_name)_fake_joint_calibration" pkg="rostopic" type="rostopic"
+        args="pub /calibrated std_msgs/Bool true" />
+
+</launch>

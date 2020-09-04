@@ -1,0 +1,10 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl ingo_stefan_table_chairs
+Ka 0.000000 0.000000 0.000000
+Kd 0.988235 0.945098 0.768627
+Ks 0.330000 0.330000 0.330000
+map_Kd ingo_table_4_obj0_object/ingo_stefan_table_chairs.jpg
+

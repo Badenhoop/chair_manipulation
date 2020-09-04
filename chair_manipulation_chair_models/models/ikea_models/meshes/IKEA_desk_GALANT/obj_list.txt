@@ -1,0 +1,7 @@
+galant_desk_1_obj0_object
+galant_desk_2_obj0_object
+galant_desk_3_obj0_object
+galant_desk_4_obj0_object
+galant_desk_5_obj0_object
+galant_desk_6_obj0_object
+galant_desk_7_obj0_object

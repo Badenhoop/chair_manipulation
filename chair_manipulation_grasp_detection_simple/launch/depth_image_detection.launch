@@ -1,0 +1,8 @@
+<launch>
+  <arg name="grasp_frame" default="grasp" />
+
+  <node name="grasp_detection" pkg="chair_manipulation_grasp_detection_simple" type="depth_image_detection_node" output="screen">
+    <rosparam file="$(find chair_manipulation_grasp_detection_simple)/cfg/depth_image_detection.yaml" />
+    <param name="grasp_frame" value="$(arg grasp_frame)" />
+  </node>
+</launch>

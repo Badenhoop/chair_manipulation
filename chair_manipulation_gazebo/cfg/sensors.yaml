@@ -1,0 +1,18 @@
+sensors:
+  - sensor_plugin: occupancy_map_monitor/PointCloudOctomapUpdater
+    filtered_cloud_topic: filtered_cloud1
+    max_range: 5.0
+    max_update_rate: 1.0
+    padding_offset: 0.1
+    padding_scale: 1.0
+    point_cloud_topic: /camera1/kinect/depth/points
+    point_subsample: 1
+
+  - sensor_plugin: occupancy_map_monitor/PointCloudOctomapUpdater
+    filtered_cloud_topic: filtered_cloud2
+    max_range: 5.0
+    max_update_rate: 1.0
+    padding_offset: 0.1
+    padding_scale: 1.0
+    point_cloud_topic: /camera2/kinect/depth/points
+    point_subsample: 1

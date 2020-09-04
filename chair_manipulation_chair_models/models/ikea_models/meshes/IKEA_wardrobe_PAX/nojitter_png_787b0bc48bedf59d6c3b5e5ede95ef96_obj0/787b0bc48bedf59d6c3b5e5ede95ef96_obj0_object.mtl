@@ -1,0 +1,27 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Metal_Seamed
+Ka 0.000000 0.000000 0.000000
+Kd 0.160784 0.164706 0.152941
+Ks 0.330000 0.330000 0.330000
+map_Kd 787b0bc48bedf59d6c3b5e5ede95ef96_obj0_object/Metal_Seamed.jpg
+
+newmtl hemnesVertical
+Ka 0.000000 0.000000 0.000000
+Kd 0.556863 0.474510 0.419608
+Ks 0.330000 0.330000 0.330000
+map_Kd 787b0bc48bedf59d6c3b5e5ede95ef96_obj0_object/hemnesVertical.jpg
+
+newmtl M_89894572_50x229x_195PLN_
+Ka 0.000000 0.000000 0.000000
+Kd 0.623529 0.517647 0.447059
+Ks 0.330000 0.330000 0.330000
+map_Kd 787b0bc48bedf59d6c3b5e5ede95ef96_obj0_object/M_89894572_50x229x_195PLN_.jpg
+

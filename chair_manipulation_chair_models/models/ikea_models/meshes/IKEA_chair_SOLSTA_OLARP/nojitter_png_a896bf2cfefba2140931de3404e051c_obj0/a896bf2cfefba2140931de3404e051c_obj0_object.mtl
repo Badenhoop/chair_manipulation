@@ -1,0 +1,15 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl Wood_Board_Cork
+Ka 0.000000 0.000000 0.000000
+Kd 0.843137 0.788235 0.450980
+Ks 0.330000 0.330000 0.330000
+map_Kd a896bf2cfefba2140931de3404e051c_obj0_object/Wood_Board_Cork.jpg
+
+newmtl Color_D05
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 0.949020 0.800000
+Ks 0.330000 0.330000 0.330000
+

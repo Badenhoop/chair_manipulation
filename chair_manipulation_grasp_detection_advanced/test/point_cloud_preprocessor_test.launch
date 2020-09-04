@@ -1,0 +1,3 @@
+<launch>
+  <node name="point_cloud_preprocessor_test" pkg="chair_manipulation_grasp_detection_advanced" type="point_cloud_preprocessor_test" output="screen"/>
+</launch>

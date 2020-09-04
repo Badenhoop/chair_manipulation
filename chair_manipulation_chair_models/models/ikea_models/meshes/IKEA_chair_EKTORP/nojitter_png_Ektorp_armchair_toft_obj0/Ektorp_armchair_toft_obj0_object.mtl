@@ -1,0 +1,15 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl Textile_Striped_Blue
+Ka 0.000000 0.000000 0.000000
+Kd 0.388235 0.521569 0.643137
+Ks 0.330000 0.330000 0.330000
+map_Kd Ektorp_armchair_toft_obj0_object/Textile_Striped_Blue.jpg
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+

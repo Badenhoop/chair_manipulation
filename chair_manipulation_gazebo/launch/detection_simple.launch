@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- grasp detection (first robot) -->
+  <include ns="camera1" file="$(find chair_manipulation_grasp_detection_simple)/launch/depth_image_detection.launch">
+    <arg name="grasp_frame" value="robot1_grasp" />
+  </include>
+
+  <!-- grasp detection (second robot) -->
+  <include ns="camera2" file="$(find chair_manipulation_grasp_detection_simple)/launch/depth_image_detection.launch">
+    <arg name="grasp_frame" value="robot2_grasp" />
+  </include>
+
+  <!-- we need the reconstructed mesh for the grasp planner which is only done by the advanced grasp detection -->
+  <include file="$(find chair_manipulation_grasp_detection_advanced)/launch/point_cloud_segmentation.launch" />
+  <include file="$(find chair_manipulation_grasp_detection_advanced)/launch/mesh_reconstruction.launch">
+    <arg name="debug" value="true" />
+  </include>
+
+</launch>
